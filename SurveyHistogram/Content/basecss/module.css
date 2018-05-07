@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/*
+    created by:fengxiaojuan 
+    time:2018/5/1
+    for:组件样式
+*/
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    width: 800px; } }
+.modal-module .modal .modal-dialog {
+  margin-top: 10%; }
+  .modal-module .modal .modal-dialog .modal-content {
+    overflow: hidden;
+    border-radius: 10px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-header {
+      background-color: #3c8dbc;
+      color: #FFFFFF; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .control-label {
+      padding: 8px 0 17px 51px !important; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .form-control {
+      margin: 0 0 10px 0;
+      border-radius: 5px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .pattern-search {
+      background: #EEEEEE;
+      padding: 10px 0 50px 0;
+      margin: -20px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay {
+      height: 500px;
+      overflow: auto;
+      float: left;
+      margin: 30px 0 0 0; }
+      .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li {
+        list-style: none;
+        display: inline-block;
+        float: left;
+        padding: 5px;
+        width: 120px;
+        height: 150px;
+        text-align: center; }
+        .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li img {
+          margin-top: 20px;
+          cursor: pointer;
+          width: 70px;
+          height: 70px; }
+        .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li a {
+          color: #2E5254; }
+        .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li a:hover {
+          color: #000; }
+      .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li:hover {
+        background: #EEEEEE; }
+
+/*# sourceMappingURL=module.css.map */

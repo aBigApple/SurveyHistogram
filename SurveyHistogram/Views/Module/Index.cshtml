@@ -1,0 +1,862 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- 基本  -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 id="mari-1" class="box-title">基本信息</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>工程名称</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>项目名称</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>钻孔编号</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>原位测试</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">原位测试</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>开始日期:</label>
+
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>孔口标高</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                    <div class="form-group">
+                        <label>仪器型号</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">仪器型号</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                            <option>马家湾隧道</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>结束日期:</label>
+
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>钻孔坐标 X=</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Y=</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>钻孔位置</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label></label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label></label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>水位深度</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <hr />
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>建基面高程</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>推荐承载力</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>单轴抗压强</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>模型</label>
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                            <option>CK1</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+    <!-- /.box -->
+    <!-- 地质  -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 id="mari-2" class="box-title">地质</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <form class="form-horizontal" role="form">
+                    <fieldset>
+                        <legend>添加地层</legend>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_host">地层代号</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_host">开始深度</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                            </div>
+                            <label class="col-sm-2 control-label" for="ds_name">结束深度</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_username">厚度</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_username" type="text" placeholder="root" />
+                            </div>
+                            <label class="col-sm-2 control-label" for="ds_password">层底标高</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_password" type="password" placeholder="123456" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_host">地层描述</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengmiaoshu">
+                            </div>
+                            <label class="col-sm-2 control-label" for="ds_name">图例号</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_username">图例说明</label>
+                            <div class="col-sm-4">
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option selected="selected">侏罗纪</option>
+                                    <option>CK1</option>
+                                    <option>CK1</option>
+                                    <option>CK1</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 control-label" for="ds_password">接触关系</label>
+                            <div class="col-sm-4">
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option selected="selected">侏罗纪</option>
+                                    <option>CK1</option>
+                                    <option>CK1</option>
+                                    <option>CK1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_host">岩芯采取</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                            </div>
+                            <label class="col-sm-2 control-label" for="ds_name">含水量</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label" for="ds_password">备注</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="ds_password" type="password" placeholder="123456" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>地质预览</legend>
+                        <div class="form-group">
+                            <label for="disabledSelect" class="col-sm-2 control-label">表名</label>
+                            <div class="col-sm-12">
+                                <div class="box">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Responsive Hover Table</h3>
+
+                                        <div class="box-tools">
+                                            <div class="input-group input-group-sm" style="width: 150px;">
+                                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                                                <div class="input-group-btn">
+                                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body table-responsive no-padding">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th>序号</th>
+                                                <th>地层代号</th>
+                                                <th>开始深度</th>
+                                                <th>结束深度</th>
+                                                <th>厚度</th>
+                                                <th>层底标高</th>
+                                                <th>地层描述</th>
+                                                <th>图例号</th>
+                                                <th>图例说明</th>
+                                                <th>接触关系</th>
+                                                <th>岩芯采取</th>
+                                                <th>含水量</th>
+                                                <th>备注</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected">侏罗纪</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected">侏罗纪</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected">侏罗纪</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected">侏罗纪</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" style="width: 100%;">
+                                                        <option selected="selected">侏罗纪</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                        <option>CK1</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>字段名</legend>
+                        <div class="form-group">
+                            <label for="disabledSelect" class="col-sm-2 control-label">表名</label>
+                            <div class="col-sm-10">
+                                <select id="disabledSelect" class="form-control">
+                                    <option>禁止选择</option>
+                                    <option>禁止选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+    <!-- 方法  -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 id="mari-3" class="box-title">方法</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+    <!-- 采取  -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 id="mari-4" class="box-title">采取</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+    <!-- 采样  -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 id="mari-5" class="box-title">采样</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+    <!-- 标签  -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 id="mari-6" class="box-title">标签</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
+            the plugin.
+        </div>
+    </div>
+
+
+    <div id="top_div" class='return_label' title="返回顶部"
+         style='display:none;'>
+        <div class="return_hov1">
+            <i class="eject icon"
+               style="color:#2E1B1B;font-size:2.7em;padding-top:10px;"></i>
+            <p style="color:#2E1B1B;text-align:center;font-size:18px;">返回顶部</p>
+        </div>
+    </div>
+
+    <!--弹出层组件-->
+    <div class="modal-module">
+        <div class="modal fade" id="modal-dicengdaihao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">地层代号</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <div class="modal-module">
+        <div class="modal fade" id="modal-dicengmiaoshu">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">地层描述</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label class="col-sm-2 control-label" for="ds_name">岩石名称：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_name">风化程度：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_host">节理情况:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_name">岩芯状态</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_host">颗粒成分</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_name">薄厚程度</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_host">颜色</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_name">惨杂物</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" for="ds_host" style="padding-right:12px">夹层岩石名称</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">确认</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <div class="modal-module">
+        <div class="modal fade" id="modal-tulihao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">图例号</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label class="col-sm-2 control-label" for="ds_username">花纹</label>
+                        <div class="col-sm-4">
+                            <select class="form-control select2" style="width: 100%;">
+                                <option selected="selected">砾岩</option>
+                                <option>CK1</option>
+                                <option>CK1</option>
+                                <option>CK1</option>
+                            </select>
+                        </div>
+                        <hr />
+                        <label class="col-sm-2 control-label" for="ds_username">花纹库</label>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</section>
+<!-- /.content -->
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    })
+
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass   : 'iradio_minimal-blue'
+    })
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass   : 'iradio_minimal-red'
+    })
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    })
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    //Timepicker
+    $('.timepicker').timepicker({
+      showInputs: false
+    })
+  })
+</script>

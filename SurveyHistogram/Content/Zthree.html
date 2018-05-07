@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>三块地分布</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-narrow.css" rel="stylesheet">
+    <link href="../../semantic/css/semantic.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../json2.js"></script>
+    <script type="text/javascript"
+            src="../../Echarts/echarts-2.2.0/echarts-all.js"></script>
+    <script type="text/javascript" src="../../d3/d3.v3.min.js"></script>
+    <script type="text/javascript" src="../../../js/common/SGIS.Base.js"></script>
+</head>
+<body>
+<div class="IEindecl"
+     style="display:none;position: fixed;top:0px;z-index:1000;">
+    <p style="padding-top:5px;padding-left:10px;float:left;">
+        您正在使用的浏览器版本较低，本页部分动态内容不能正常显示，建议您安装 <a
+            href="http://rj.baidu.com/soft/detail/14744.html?ald"
+            style="text-decoration: none;">谷歌浏览器(Chrome)</a> / <a
+            href="http://se.360.cn/" style="text-decoration: none;">360浏览器</a>版本。
+    </p>
+    <i id="remove_cion" class="remove icon"
+       style="float:right;padding-top:3px;cursor: pointer;"></i>
+</div>
+<div class="container">
+    <div class="title">三块地分布</div>
+    <div class="con">十九大报告中指出，实施乡村振兴战略，深化农村土地制度改革。深化改革的前提是摸清三农土地情况的家底。通过直观展示农村农业用地、宅基地、集体经营性建设用地（以下简称“三块地”）分布、存量、利用等情况，有助于把握、预判北京“三块地”现状和改革方向，探索深化产权制度改革的路径，从而实现保障农民财产权益、壮大集体经济的目标。</div>
+    <div id="mari-1" class="con_title">一、农业用地面积增加，实际耕种的耕地减少</div>
+    <div class="con">2016年，全市实际经营的农业用地1310.2万亩。从土地利用类型来看，实际耕种的耕地157.8万亩，占12.0%；实际经营的林地1032.0万亩，占78.8%；实际经营的园地116.1万亩，占8.9%；实际经营的草地及其他4.4万亩，占0.3%。全市共有3442个村开展了土地承包经营权确权登记工作，已经完成确权登记的农用地面积418.9万亩。49.2万的农户和农业经营单位通过转包、转让、出租等方式流转土地。</div>
+    <div id="FIG1">
+        <div id='FIG1_1' style='position: relative;height:400px;'>
+            <div id='gird1' style="margin:auto;"></div>
+        </div>
+    </div>
+    <div class="table_title">图1&nbsp;&nbsp;北京市农业用地类型</div>
+    <div id="mari-2" class="con_title">二、农村闲置住房7.5万处</div>
+    <div class="con">2016年，全市行政村宅基地为96.7万亩。按户籍户数计算，城市功能拓展区户均宅基地面积0.35亩，城市发展新区为0.80亩，生态涵养区为0.66亩。按户籍人口计算，城市功能拓展区人均宅基地面积0.13亩，城市发展新区为0.26亩，人均宅基地面积最多。生态涵养区为0.24亩。全市103.3万户农户有125.6万处住房，其中闲置住房7.5万处，占比6%。城市功能拓展区闲置住房0.7万处，城市发展新区为4.5万处，生态涵养区为2.3万处。</div>
+    <div class="pull-right" id="g_2_btn">
+        <button type="button" class="btn btn-default btn-success"
+                data-value="1">户均宅基地面积</button>
+        <button type="button" class="btn btn-default"
+                data-value="2">人均宅基地面积</button>
+        <button type="button" class="btn btn-default"
+                data-value="3">闲置住房</button>
+    </div>
+    <div id="FIG2">
+        <div id='gird2' style="margin:auto;"></div>
+    </div>
+    <div class="table_title">图2-2&nbsp;&nbsp;宅基地面积与闲置住房</div>
+    <div id="mari-3" class="con_title">三、发展新区集体经营性建设用地占比近6成</div>
+    <div class="con">2016年，全市行政村集体经营性建设用地130.5万亩，其中城市功能拓展区26.4万亩，占20.2%；城市发展新区77万亩，占59%；生态涵养区27.2万亩，占20.8%。按户籍人口计算，城市功能拓展区人均集体经营性建设用地0.42亩，面积最多，城市发展新区0.33亩，生态涵养区0.23亩。</div>
+    <div class="pull-right" id="g_3_btn">
+        <button type="button" class="btn btn-default btn-success"
+                data-value="1">集体经营性建设用地</button>
+        <button type="button" class="btn btn-default"
+                data-value="2">人均集体经营性建设用地</button>
+    </div>
+    <div id="FIG3">
+        <div id='gird3' style="margin:auto;"></div>
+    </div>
+    <div class="table_title">图3&nbsp;&nbsp;经营性建设用地面积</div>
+<!--    <div class='change_label' title="导航条">
+        <div class="return_hov" style="background-color: rgb(238, 238, 224);">
+            <i class="list layout icon"
+               style="color:#2E1B1B;font-size:2.7em;padding-top:5px;margin:0 auto;"></i>
+            <p style="color:#2E1B1B;text-align:center;font-size:18px;">导航</p>
+        </div>
+    </div>-->
+    <!--导航-->
+    <div class="fix_index" data-value=true>
+        <div class="ui piled segment">
+            <div class="book1">
+                <div id="page_1" class="active">
+                    <i class="book icon"></i><a>三块地分布</a>
+                </div>
+                <ul id="dir-ul" class="fix_ul">
+                    <li data-value="1"><span class="sideCatalog-index">1</span>
+                        <div>
+                            <a>用地面积</a>
+                        </div></li>
+                    <li data-value="2"><span class="sideCatalog-index">2</span>
+                        <div>
+                            <a>农村闲置住房</a>
+                        </div></li>
+                    <li data-value="3"><span class="sideCatalog-index">3</span>
+                        <div>
+                            <a>建设用地占</a>
+                        </div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="top_div" class='return_label' title="返回顶部"
+         style='display:none;'>
+        <div class="return_hov1">
+            <i class="eject icon"
+               style="color:#2E1B1B;font-size:2.7em;padding-top:10px;"> </i>
+            <p style="color:#2E1B1B;text-align:center;font-size:18px;">返回顶部</p>
+        </div>
+    </div>
+    <!-- end#top_div -->
+    <!-- 导航 -->
+</div>
+</body>
+<script type="text/javascript" src="../../semantic/js/semantic.js"></script>
+<script type="text/javascript" src="../../seajs/sea.js"></script>
+<script type="text/javascript" src="../../seajs/seajs-text.js"></script>
+<script>
+    seajs.config({
+        base : SGIS.Util.getLocalPath(),
+        map : [ [ '.json', '.json?t=' + new Date().getTime() ],
+            /*[ '.js', '.js?t=' + new Date().getTime() ],*/
+            [ '.css', '.css?t=' + new Date().getTime() ] ]
+    });
+    seajs.use('lib/module/specialquery/js/Zthree');
+</script>
+</html>

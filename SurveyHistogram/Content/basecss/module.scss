@@ -1,0 +1,75 @@
+﻿/*
+    created by:fengxiaojuan 
+    time:2018/5/1
+    for:组件样式
+*/
+@media screen and (min-width: 768px){
+    .modal-dialog {
+        width: 800px;
+    }
+}
+.modal-module{
+    .modal{
+        .modal-dialog {
+           margin-top:10%;
+           .modal-content{
+               overflow:hidden;
+               border-radius: 10px;
+               .modal-header{
+                   background-color: #3c8dbc;
+                   color: #FFFFFF;
+               }
+               .modal-body{                   
+                  .control-label{
+                      padding: 8px 0 17px 51px!important;
+                  }
+                  .form-control{
+                      margin:0 0 10px 0;
+                      border-radius: 5px;
+                  }
+                  .pattern-search{
+                      background:#EEEEEE;
+                      padding:10px 0 50px 0;
+                      margin:-20px;
+                  }
+                  .patternLibriay{
+                      height:500px;
+                      overflow:auto;
+                      float:left;
+                      margin: 30px 0 0 0;
+                      ul{                         
+                          li{
+                              list-style:none;
+                              display:inline-block;
+                              float:left;
+                              padding:5px;
+                              width:120px;
+                              height:150px;
+                              text-align:center;
+                              
+                              img{
+                                  margin-top:20px;
+                                  cursor:pointer;
+                                  width:70px;
+                                  height:70px;
+                              }
+                              a{
+                                  color:#2E5254;
+                              }
+                              a:hover{
+                                  color:#000;
+                              }
+                          }
+                          li:hover{
+                              background:#EEEEEE;
+                          }
+                          
+                      }
+                      
+                  }
+              }
+              .modal-footer{}
+          }
+       }
+   }  
+}

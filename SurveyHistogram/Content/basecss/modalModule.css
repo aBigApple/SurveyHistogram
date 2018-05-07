@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*
+    created by:fengxiaojuan
+    for:组件样式
+*/
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    width: 800px; } }
+.modal-module .modal .modal-dialog {
+  margin-top: 10%; }
+  .modal-module .modal .modal-dialog .modal-content {
+    overflow: hidden;
+    border-radius: 10px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-header {
+      background-color: #3c8dbc;
+      color: #FFFFFF; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .form-control {
+      margin: 0 0 10px 0;
+      border-radius: 5px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay {
+      height: 500px;
+      overflow: auto; }
+      .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li {
+        list-style: none;
+        display: inline-block;
+        float: left;
+        padding: 5px; }
+        .modal-module .modal .modal-dialog .modal-content .modal-body .patternLibriay ul li img {
+          cursor: pointer;
+          width: 70px;
+          height: 50px; }
+
+/*# sourceMappingURL=modalModule.css.map */
