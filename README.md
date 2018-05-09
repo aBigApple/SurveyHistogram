@@ -1,2 +1,0 @@
-# SurveyHistogram
-利用CADLIB进行地质勘测钻孔柱状图的生成以及与webGIS的结合。
