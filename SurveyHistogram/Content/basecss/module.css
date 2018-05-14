@@ -15,11 +15,11 @@
     .modal-module .modal .modal-dialog .modal-content .modal-header {
       background-color: #3c8dbc;
       color: #FFFFFF; }
-    .modal-module .modal .modal-dialog .modal-content .modal-body .control-label {
-      padding: 8px 0 17px 51px !important; }
     .modal-module .modal .modal-dialog .modal-content .modal-body .form-control {
       margin: 0 0 10px 0;
       border-radius: 5px; }
+    .modal-module .modal .modal-dialog .modal-content .modal-body .select2-container {
+      margin: 6px !important; }
     .modal-module .modal .modal-dialog .modal-content .modal-body .pattern-search {
       background: #EEEEEE;
       padding: 10px 0 50px 0;

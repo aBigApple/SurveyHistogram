@@ -24,7 +24,7 @@ namespace BLL.module
         public List<PatternModel> bindImg()
         {
 
-            string path =  @"\patternLibriay";  //暂时将文件放在C盘根目录下
+            string path = @"F:\drillHistogramFileStore\legend\patternLibriay";  //程序运行时先在F盘下配置，保证该文件存在
 
             List<PatternModel> imgList = new List<PatternModel>();
             //StringBuilder imgList = new StringBuilder();
@@ -43,7 +43,7 @@ namespace BLL.module
         //获取图片名称
         public string geImgtName(string numName)
         {
-            string path = @"..\rockName\";
+            string path = @"F:\drillHistogramFileStore\legend\rockName\";//程序运行时先在F盘下配置，保证该文件存在
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfo)  //遍历文件

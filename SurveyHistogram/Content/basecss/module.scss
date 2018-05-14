@@ -20,13 +20,14 @@
                    color: #FFFFFF;
                }
                .modal-body{                   
-                  .control-label{
-                      padding: 8px 0 17px 51px!important;
-                  }
+                  .control-label{  }
                   .form-control{
                       margin:0 0 10px 0;
-                      border-radius: 5px;
+                      border-radius: 5px;                     
                   }
+                  .select2-container {
+                          margin: 6px!important;
+                      }
                   .pattern-search{
                       background:#EEEEEE;
                       padding:10px 0 50px 0;

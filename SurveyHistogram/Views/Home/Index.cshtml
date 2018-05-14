@@ -29,137 +29,135 @@
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            @*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
                         </div>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            <form class="form-horizontal" role="form">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_host">工程名称</label>
-                                        <div class="col-sm-4">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">马家湾隧道</option>
-                                                <option>马家湾隧道</option>
-                                                <option>马家湾隧道</option>
-                                                <option>马家湾隧道</option>
-                                            </select>
-                                        </div>
-                                        <label class="col-sm-2 control-label" for="ds_name">项目名称</label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
+                    <div class="box-body"> 
+                        <form class="form-horizontal" role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_host">工程名称</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">马家湾隧道</option>
+                                            <option>马家湾隧道</option>
+                                            <option>马家湾隧道</option>
+                                            <option>马家湾隧道</option>
+                                        </select>
                                     </div>
-                                    <hr />
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_username">钻孔编号</label>
-                                        <div class="col-sm-4">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
-                                        <label class="col-sm-2 control-label" for="ds_password">孔口标高</label>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" id="ds_password" type="password" placeholder="123456" />
-                                        </div>
+                                    
+                                </div>
+                                <label class="col-sm-2 control-label" for="ds_name">项目名称</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" data-toggle="modal" data-target="#modal-tulihao" placeholder="Enter ...">
+                                </div>
+                                <hr />
+                                <label class="col-sm-1 control-label" for="ds_username">钻孔编号</label>
+                                <div class="col-sm-4">
+                                    <select class="form-control select2" style="width: 100%;">
+                                        <option selected="selected">CK1</option>
+                                        <option>CK1</option>
+                                        <option>CK1</option>
+                                        <option>CK1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <label class="col-sm-2 control-label" for="ds_password">孔口标高</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" id="ds_password" type="password" placeholder="123456" />
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_username">钻孔位置</label>
-                                        <div class="col-sm-3">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengmiaoshu">
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_username">钻孔位置</label>
+                                    <div class="col-sm-3">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                        </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_username">钻孔坐标 X</label>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
-                                        </div>
-                                        <label class="col-sm-2 control-label" for="ds_password">Y</label>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
-                                        </div>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" style="width: 100%;" data-toggle="modal">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_username">原位测试</label>
-                                        <div class="col-sm-4">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">侏罗纪</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
-                                        <label class="col-sm-2 control-label" for="ds_password">仪器型号</label>
-                                        <div class="col-sm-4">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">侏罗纪</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" style="width: 100%;" data-toggle="modal">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_host">施钻日期</label>
-                                        <div class="input-group col-sm-4">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                            <input type="text" class="form-control pull-right" id="reservation">
-                                        </div>
-                                        <label class="col-sm-2 control-label" for="ds_name">水位深度</label>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_username">钻孔坐标 X</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" style="width: 100%;" data-toggle="modal">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_name">建基面高程</label>
-                                        <div class="col-sm-2">
-                                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                                        </div>
-                                        <label class="col-sm-1 control-label" for="ds_username">推荐承载力</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">侏罗纪</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
-                                        <label class="col-sm-1 control-label" for="ds_name">单轴抗压强</label>
-                                        <div class="col-sm-2">
-                                            <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                                        </div>
-                                        <label class="col-sm-1 control-label" for="ds_password">模型</label>
-                                        <div class="col-sm-1">
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">侏罗纪</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                                <option>CK1</option>
-                                            </select>
-                                        </div>
+                                    <label class="col-sm-2 control-label" for="ds_password">Y</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" style="width: 100%;" data-toggle="modal">
                                     </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <!-- /.row -->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_username">原位测试</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">侏罗纪</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-sm-2 control-label" for="ds_password">仪器型号</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">侏罗纪</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_host">施钻日期</label>
+                                    <div class="input-group col-sm-4">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control pull-right" id="reservation">
+                                    </div>
+                                    <label class="col-sm-2 control-label" for="ds_name">水位深度</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-1 control-label" for="ds_name">建基面高程</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                                    </div>
+                                    <label class="col-sm-1 control-label" for="ds_username">推荐承载力</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">侏罗纪</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-sm-1 control-label" for="ds_name">单轴抗压强</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
+                                    </div>
+                                    <label class="col-sm-1 control-label" for="ds_password">模型</label>
+                                    <div class="col-sm-1">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">侏罗纪</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                            <option>CK1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
@@ -185,39 +183,39 @@
                                 <fieldset>
                                     <legend>添加地层</legend>
                                     <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_host">地层代号</label>
+                                        <label class="col-sm-1 control-label">地层年代</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
+                                            <input class="form-control" id="strataAge" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengdaihao">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_host">开始深度</label>
+                                        <label class="col-sm-1 control-label">开始深度</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
+                                            <input class="form-control" id="ds_host" type="text" placeholder="" />
                                         </div>
-                                        <label class="col-sm-2 control-label" for="ds_name">结束深度</label>
+                                        <label class="col-sm-2 control-label">结束深度</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" id="ds_name" type="text" placeholder="msh" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_username">厚度</label>
+                                        <label class="col-sm-1 control-label">厚度</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" id="ds_username" type="text" placeholder="root" />
                                         </div>
-                                        <label class="col-sm-2 control-label" for="ds_password">层底标高</label>
+                                        <label class="col-sm-2 control-label">层底标高</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" id="ds_password" type="password" placeholder="123456" />
+                                            <input class="form-control" type="password" placeholder="123456" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-1 control-label" for="ds_host">地层描述</label>
+                                        <label class="col-sm-1 control-label">地层描述</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengmiaoshu">
+                                            <input class="form-control" id="strataDescribe" style="width: 100%;" data-toggle="modal" data-target="#modal-dicengmiaoshu">
                                         </div>
-                                        <label class="col-sm-2 control-label" for="ds_name">图例号</label>
+                                        <label class="col-sm-2 control-label">图例号</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
+                                            <input class="form-control" name="legendName" id="legendName" style="width: 100%;" data-toggle="modal" data-target="#modal-tulihao">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -341,46 +339,38 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">地层代号</h4>
+                    <h4 class="modal-title">地层年代</h4>
                 </div>
                 <div class="modal-body">
-                    <label class="col-sm-2 control-label" for="ds_name">界代：</label>
-                    <div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                            <option selected="selected">新生界(代)</option>
-                            <option>中生界(代)</option>
-                            <option>古生界(代)</option>
-                        </select>
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">系纪：</label>
-                    <div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                            
-                        </select>
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_host">统世:</label>
-                    <div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                            
-                        </select>
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">阶期</label>
-                    <div class="col-sm-10">
-                        <select class="form-control select2" style="width: 100%;">
-                            
-                        </select>
-                    
+                    <form class="ageForm form-group">
+                        <label class="col-sm-2 control-label">界代：</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" id="jiedai" style="width: 100%;"></select>
+                        </div>
+                        <label class="col-sm-2 control-label">系纪：</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" id="xiji" style="width: 100%;"></select>
+                        </div>
+                        <label class="col-sm-2 control-label">统世:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" id="tongshi" style="width: 100%;"></select>
+                        </div>
+                        <label class="col-sm-2 control-label">阶期</label>
+                        <div class="col-sm-10">
+                            <select class="form-control select2" id="jieqi" style="width: 100%;"></select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"class="mclose btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary" id="strataAgeOK">确认</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
+      </div>
     </div>
-    <!-- /.modal -->
+    <!--地层描述 -->
     <div class="modal fade" id="modal-dicengmiaoshu">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -391,53 +381,55 @@
                     <h4 class="modal-title">地层描述</h4>
                 </div>
                 <div class="modal-body">
-                    <label class="col-sm-2 control-label" for="ds_name">岩石名称：</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">风化程度：</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_host">节理情况:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">岩芯状态</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_host">颗粒成分</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">薄厚程度</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_host">颜色</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_name">惨杂物</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_name" type="text" placeholder="msh" />
-                    </div>
-                    <label class="col-sm-2 control-label" for="ds_host" style="padding-right:12px">夹层岩石名称</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="ds_host" type="text" placeholder="192.168.1.161" />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">确认</button>
-                </div>
+                    <form class="strataDescribeForm form-group" action="~/Home/GetStrataDescribeInfo"  method="post">
+                        <label class="col-sm-2 control-label">岩石名称：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="rockName" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label">风化程度：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="decencyLevel" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label">节理情况:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="backCondition" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label">岩芯状态</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="coreCondition" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label">颗粒成分</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="pelletConstituent" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label">薄厚程度</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="thicknessConditon" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label">颜色</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="collor" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <label class="col-sm-2 control-label">惨杂物</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="adulterant" type="text" placeholder="msh" />
+                        </div>
+                        <label class="col-sm-2 control-label" style="padding-right:12px">夹层岩石名称</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="interbeddedRockName" type="text" placeholder="192.168.1.161" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="mclose btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary" id="strataDescribeOK">确认</button>
+                        </div>
+                    </form>
+                </div>               
             </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal -->
+    <!--花纹库 -->
     <div class="modal fade" id="modal-tulihao">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -448,24 +440,23 @@
                     <h4 class="modal-title">图例号</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="pattern-search">
-                        <label class="col-sm-2 control-label" for="ds_username">花纹</label>
-                        <div class="col-sm-8">
-                            <select id="searchPattern" class="form-control select2" style="width: 100%;">
-                                @*<option selected="selected">砾岩</option>
-                             
-                                <option>CK1</option>
-                                <option>CK1</option>*@
-                            </select>
-                        </div>                    
-                    </div>
-                    <div class="patternLibriay">
-                        <ul id="patternLibriary"></ul>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">确认</button>
+                    <form class="form-group" action="~/Home/GetLegend"  method="post">
+                        <div class="pattern-search">
+                            <label class="col-sm-2 control-label" for="ds_username">花纹</label>
+                            <div class="col-sm-8">
+                                <select id="searchPattern" name="rockName" class="form-control select2" style="width: 100%;"></select>
+                            </div>
+                        </div>
+                        <div class="patternLibriay">
+                            <ul id="patternLibriary">
+
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="mclose btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" id="legendOK" class="btn btn-primary">确认</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -475,6 +466,7 @@
     <!-- /.modal -->
 </div>
 <script type="text/javascript" src="~/Scripts/basejs/setStep.js"></script>
+
 <script>
     var step = new SetStep({
         content: '.stepCont'
@@ -483,6 +475,7 @@
 <script>
     $('#patternLibriary').append();
 </script>
+
 <script>
   $(function () {
     //Initialize Select2 Elements
@@ -538,11 +531,6 @@
       checkboxClass: 'icheckbox_flat-green',
       radioClass   : 'iradio_flat-green'
     })
-
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
 
     //Timepicker
     $('.timepicker').timepicker({

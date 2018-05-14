@@ -31,42 +31,6 @@ namespace ViewModel
         private string waterInclude;//含水量
         private string remarks;//备注
 
-        public string StrataCode
-        {
-            get { return strataCode; }
-            set { strataCode = value; }
-
-        }
-        public string StrataID
-        {
-            get { return strataID; }
-            set { strataID = value; }
-
-        }
-        public double StartDeep
-        {
-            get { return startDeep; }
-            set { startDeep = value; }
-
-        }
-        public double EndDeep
-        {
-            get { return endDeep; }
-            set { endDeep = value; }
-
-        }
-        public double Thickness
-        {
-            get { return thickness; }
-            set { thickness = value; }
-
-        }
-        public double BottomElevation
-        {
-            get { return bottomElevation; }
-            set { bottomElevation = value; }
-
-        }
         public string StrataDescription
         {
             get { return strataDescription; }
@@ -159,5 +123,30 @@ namespace ViewModel
 
     }
 
+    public class StrataDescribe
+    {
+        public string rockName{ get; set; }
+        public string decencyLevel { get; set; }
+        public string backCondition { get; set; }
+        public string coreCondition { get; set; }
+        public string pelletConstituent { get; set; }
+        public string interbeddedRockName { get; set; }
+        public string adulterant { get; set; }
+        public string collor { get; set; }
+        public string thicknessConditon { get; set; }
+        public int strataID { get; set; }
+        public int drillID { get; set; }
 
+    }
+    public class Legend
+    {
+        public int legendID { get; set; }
+        public string legendName { get; set; }
+        public string legendCode { get; set; }
+        public string patternPngPath { get; set; }
+        public string patternPatPath { get; set; }
+        public int drillID { get; set; }
+        public int strataID { get; set; }
+
+    }
 }

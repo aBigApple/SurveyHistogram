@@ -21,11 +21,6 @@ namespace SurveyHistogram.Controllers
         {
             Pattern a = new Pattern();
             List<PatternModel> imgList = a.bindImg();
-            //List<Person> list = new List<Person>();
-            //list.Add(new Person(1, "张飞", 21));
-            //list.Add(new Person(2, "关羽", 22));
-            //list.Add(new Person(3, "刘备", 23));
-            //return Json(list,JsonRequestBehavior.AllowGet);     //.Net还是很威武的，这行代码是可以运行并得到正确结果的，然后注释来看看前辈们的List<T>转Json的代码//
             string strJson = ObjToJson<List<PatternModel>>(imgList);       //泛泛型？    这代码怎么感觉怪怪的。
             return Content(strJson);
         }
@@ -44,6 +39,35 @@ namespace SurveyHistogram.Controllers
             {
                 return null;
             }
+        }
+        //基本信息传值
+        //public ActionResult GetBasicInfo()
+        //{
+
+        //}
+        //图例号传值
+        public ActionResult GetLegend(Legend info)
+        {
+            return Content(info.legendName);
+        }
+        //地层描述传值
+        public ActionResult GetStrataDescribeInfo(StrataDescribe info)
+        {
+            
+            string rockName = info.rockName;
+            string decencyLevel = info.decencyLevel;
+            string backCondition = info.backCondition;
+            string coreCondition = info.coreCondition;
+            string pelletConstituent = info.pelletConstituent;
+            string interbeddedRockName = info.interbeddedRockName;
+            string adulterant = info.adulterant;
+            string collor = info.collor;
+            string thicknessConditon = info.thicknessConditon;
+            //int strataID = info.strataID;
+            //int drillID = info.drillID;
+
+            //为了方便演示，我们直接输出这两个值，表示我们已经拿到了数据
+            return Content(rockName + "*****" + decencyLevel);
         }
 
 

@@ -1085,6 +1085,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\HtmlPage1.html" />
+    <Content Include="Scripts\basejs\module.form.validatee.js" />
     <Content Include="Scripts\basejs\module.js" />
     <Content Include="Scripts\basejs\navigation.js" />
     <Content Include="Scripts\basejs\setStep.js" />
