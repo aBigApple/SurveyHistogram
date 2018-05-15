@@ -45,7 +45,19 @@ namespace SurveyHistogram.Controllers
         {
             return Content(info.projectName);
         }
-
+        //地层信息传值
+        public ActionResult GetDrillStrataModel(drillStrata info)
+        {
+            List<drillStrata> strata = new List<drillStrata>();
+            strata.Add(info);
+            return Content(info.strataDescribe);
+        }
+        public ActionResult SetDrillStrataInfo(drillStrata info)
+        {
+            List<drillStrata> strata = new List<drillStrata>();
+            strata.Add(info);
+            return Content(info.strataDescribe);
+        }
         //图例号传值
         public ActionResult GetLegend(Legend info)
         {

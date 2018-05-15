@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "岩石钻孔成图";
 }
 
 <!-- Content Header (Page header) -->
@@ -73,21 +73,18 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label">钻孔位置</label>
-                                        <div class="col-lg-8">
-                                            <div class="col-lg-3">
-                                                <select class="form-control select2" name="drillLocation" style="width: 100%;">
-                                                    <option selected="selected">Z</option>
-                                                    <option>k</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <input class="form-control" name="location1" style="width: 100%;">
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <input class="form-control" name="location2" style="width: 100%;">
-                                            </div>
+                                        <div class="col-lg-2">
+                                            <select class="form-control select2" name="drillLocation" style="width: 100%;">
+                                                <option selected="selected">Z</option>
+                                                <option>k</option>
+                                            </select>
                                         </div>
-
+                                        <div class="col-lg-2">
+                                            <input class="form-control" name="location1" style="width: 100%;">
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input class="form-control" name="location2" style="width: 100%;">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label">钻孔坐标 X</label>
@@ -179,8 +176,11 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                            </div>
-                            
+                                <div class='step-button'>
+                                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                </div>
+                            </div>                            
                         </form>
                     </div>
                     <!-- /.box-body -->
@@ -198,7 +198,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <form id="drillStrataForm" class="form-horizontal" role="form">
+                            <form id="drillStrataForm" class="form-horizontal" role="form"  action="~/Home/SetDrillStrataInfo" method="post">
                                 <fieldset>
                                     <legend>添加地层</legend>
                                     <div class="form-group">
@@ -272,51 +272,78 @@
                                         </div>
                                     </div>
                                 </fieldset>
+                                <button type='submit' class='btn btn-primary pull-right' id='addDrillStrata'>添加</button>                               
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+
+                    </div>
+                </div>
+                <div class="box box-default">
+                    <div class="box-header">
+                        <h3 class="box-title">地层预览</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table id="drillStrataTable" class="table table-hover">
+                            <tr class="success">
+                                <th width="">序号</th>
+                                <th>地层代号</th>
+                                <th>开始深度</th>
+                                <th>结束深度</th>
+                                <th>厚度</th>
+                                <th>层底标高</th>
+                                <th>地层描述</th>
+                                <th>图例号</th>
+                                <th>图例说明</th>
+                                <th>接触关系</th>
+                                <th>岩芯采取</th>
+                                <th>含水量</th>
+                                <th>备注</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+                <div class='step-button' style="margin-top: 50px;">
+                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                    <button type='submit' class='submitStrataAllInfo btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                </div>
+            </div>
+            <div id="page3" class="stepPage">
+                <!-- 类型  -->
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">类型</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <form id="drillStrataForm" class="form-horizontal" role="form">
                                 <fieldset>
-                                    <legend>地层预览</legend>
+                                    <legend>柱状图成图类型</legend>
                                     <div class="form-group">
-                                        <label for="disabledSelect" class="col-sm-2 control-label">表名</label>
-                                        <div class="col-sm-12">
-                                            <div class="box">
-                                                <div class="box-header">
-                                                    <h3 class="box-title">Responsive Hover Table</h3>
-
-                                                    <div class="box-tools">
-                                                        <div class="input-group input-group-sm" style="width: 150px;">
-                                                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                                                            <div class="input-group-btn">
-                                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.box-header -->
-                                                <div class="box-body table-responsive no-padding">
-                                                    <table class="table table-hover">
-                                                        <tr>
-                                                            <th>序号</th>
-                                                            <th>地层代号</th>
-                                                            <th>开始深度</th>
-                                                            <th>结束深度</th>
-                                                            <th>厚度</th>
-                                                            <th>层底标高</th>
-                                                            <th>地层描述</th>
-                                                            <th>图例号</th>
-                                                            <th>图例说明</th>
-                                                            <th>接触关系</th>
-                                                            <th>岩芯采取</th>
-                                                            <th>含水量</th>
-                                                            <th>备注</th>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <!-- /.box-body -->
-                                            </div>
-                                            <!-- /.box -->
+                                        <label class="col-sm-2 control-label">钻孔类型</label>
+                                        <div class="col-sm-6">
+                                            <select class="form-control select2" name="legendExplation" style="width: 100%;">
+                                                <option selected="selected">岩石钻孔.</option>
+                                                <option>声波钻孔</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </fieldset>
+                                <div class='step-button'>
+                                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -326,20 +353,58 @@
                     </div>
                 </div>
             </div>
-            <div id="page3" class="stepPage">
-                <h1>
-                    page3
-                </h1>
-            </div>
             <div id="page4" class="stepPage">
-                <h1>
-                    page4
-                </h1>
+                <!-- 比例  -->
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">比例</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <form id="drillStrataForm" class="form-horizontal" role="form">
+                                <fieldset>
+                                    <legend>柱状图比例尺</legend>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">比例尺</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" id="drillScale" name="drillScale" style="width: 100%;" placeholder="必填项">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class='step-button'>
+                                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary" id="">成图</button>
+                    </div>
+                </div>
             </div>
             <div id="page5" class="stepPage">
-                <h1>
-                    page5
-                </h1>
+                <!-- 预览  -->
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">预览</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class='step-button' style="margin-top: 50px;">
+                            <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                            <button type='button' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -410,55 +475,55 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">岩石名称：</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="rockName" type="text" placeholder="msh" />
+                                    <input class="form-control" name="rockName" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">风化程度：</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="decencyLevel" type="text" placeholder="msh" />
+                                    <input class="form-control" name="decencyLevel" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">节理情况:</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="backCondition" type="text" placeholder="192.168.1.161" />
+                                    <input class="form-control" name="backCondition" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">岩芯状态</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="coreCondition" type="text" placeholder="msh" />
+                                    <input class="form-control" name="coreCondition" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">颗粒成分</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="pelletConstituent" type="text" placeholder="192.168.1.161" />
+                                    <input class="form-control" name="pelletConstituent" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">薄厚程度</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="thicknessConditon" type="text" placeholder="msh" />
+                                    <input class="form-control" name="thicknessConditon" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">颜色</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="collor" type="text" placeholder="192.168.1.161" />
+                                    <input class="form-control" name="collor" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">惨杂物</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="adulterant" type="text" placeholder="msh" />
+                                    <input class="form-control" name="adulterant" type="text" placeholder="请输入..." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" style="padding-right:0">夹层岩石名称</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="interbeddedRockName" type="text" placeholder="192.168.1.161" />
+                                    <input class="form-control" name="interbeddedRockName" type="text" placeholder="请输入..." />
                                 </div>
                            </div>
                             <div class="modal-footer">

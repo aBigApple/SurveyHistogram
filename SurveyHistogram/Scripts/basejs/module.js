@@ -79,6 +79,9 @@ $("#legendOK").click(function () {
     return false;
 });
 
+
+
+//地层年代四级联动
 let optionKinds = {
     "jiedai": {
         "新生界(代)": ['第四系（纪）Q', '新近系（纪）N', '古代系（纪）E'],

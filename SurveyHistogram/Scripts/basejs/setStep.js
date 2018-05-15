@@ -16,7 +16,7 @@ function SetStep(arg){
         stepContainerMar:20,
         nextBtn:'.nextBtn',
         prevBtn:'.prevBtn',
-        steps:['基本','地质','采样','比例','成图'],
+        steps:['基本','地质','类型','比例','预览'],
         //pageClass:'',//分页的类或则id
         stepCounts:5,//总共的步骤数
         curStep:1,//当前显示第几页
@@ -45,8 +45,8 @@ SetStep.prototype.init=function(arg){
     var stepP=$("<div class='ystep-progress'>"+
                 "<p class='ystep-progress-bar'><span class='ystep-progress-highlight' style='width:0%'></span></p>"+
             "</div>");
-    var stepButtonHtml =$( "<div class='step-button'><button type='button' class='btn btn-default prevBtn' id='prevBtn' class='prevBtn'>上一步</button>"+
-                        "<button type='button' class='btn btn-default nextBtn' id='nextBtn' class='nextBtn'>下一步</button></div>");
+    //var stepButtonHtml =$( "<div class='step-button'><button type='button' class='btn btn-default prevBtn' id='prevBtn' class='prevBtn'>上一步</button>"+
+    //                    "<button type='button' class='btn btn-default nextBtn' id='nextBtn' class='nextBtn'>下一步</button></div>");
     stepP.css('width',w_li*2*(this.opt.stepCounts-1));
     stepP.find('.ystep-progress-bar').css('width',w_li*2*(this.opt.stepCounts-1))
     for(var i=0;i<this.opt.stepCounts;i++){
@@ -65,7 +65,7 @@ SetStep.prototype.init=function(arg){
     this.setProgress(this.stepContainer,this.opt.curStep,this.opt.stepCounts)
     //判断参数 是否显示按钮 并绑定点击事件
     if(this.opt.showBtn){
-        this.content.append(stepButtonHtml)
+        //this.content.append(stepButtonHtml)
         this.prevBtn=this.content.find(this.opt.prevBtn)
         this.nextBtn=this.content.find(this.opt.nextBtn)
         this.prevBtn.on('click',function(){
