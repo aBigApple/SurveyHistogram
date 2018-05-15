@@ -8,6 +8,7 @@
         width: 800px;
     }
 }
+
 .modal-module{
     .modal{
         .modal-dialog {
@@ -19,20 +20,14 @@
                    background-color: #3c8dbc;
                    color: #FFFFFF;
                }
-               .modal-body{                   
-                  .control-label{  }
-                  .form-control{
-                      margin:0 0 10px 0;
-                      border-radius: 5px;                     
-                  }
+               .modal-body{                                    
+                  .form-group {
+                      margin-bottom: 5px;
+                   }
                   .select2-container {
-                          margin: 6px!important;
+                          
                       }
-                  .pattern-search{
-                      background:#EEEEEE;
-                      padding:10px 0 50px 0;
-                      margin:-20px;
-                  }
+
                   .patternLibriay{
                       height:500px;
                       overflow:auto;

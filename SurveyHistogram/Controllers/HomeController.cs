@@ -41,10 +41,11 @@ namespace SurveyHistogram.Controllers
             }
         }
         //基本信息传值
-        //public ActionResult GetBasicInfo()
-        //{
+        public ActionResult GetDrillBasicInfo(DrillBasicInfo info)
+        {
+            return Content(info.projectName);
+        }
 
-        //}
         //图例号传值
         public ActionResult GetLegend(Legend info)
         {

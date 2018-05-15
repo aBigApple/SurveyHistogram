@@ -26,9 +26,9 @@ namespace SurveyHistogram
                         "~/Content/plugins/timepicker/bootstrap-timepicker.min.js",
                         "~/Content/components/jquery-slimscroll/jquery.slimscroll.min.js",
                         "~/Content/plugins/iCheck/icheck.min.js",
-                        "~/Content/components/fastclick/lib/fastclick.js",                        
-                        "~/Scripts/basejs/navigation.js",
+                        "~/Content/components/fastclick/lib/fastclick.js",                       
                         "~/Scripts/basejs/module.js",
+                        "~/Scripts/basejs/module.form.validate.js",
                         "~/Scripts/site.js"));
 
             //绑定地图的js
@@ -45,6 +45,7 @@ namespace SurveyHistogram
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrapValidator.js",
                       "~/Scripts/respond.js"));
 
             //样式绑定***********！！！
@@ -54,17 +55,15 @@ namespace SurveyHistogram
                       "~/Content/components/Ionicons/css/ionicons.min.css",
                       "~/Content/components/bootstrap-daterangepicker/daterangepicker.css",
                       "~/Content/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
-                      "~/Content/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css",
                       "~/Content/plugins/iCheck/all.css",
                       "~/Content/plugins/timepicker/bootstrap-timepicker.min.css",
                       "~/Content/components/select2/dist/css/select2.min.css",
                       "~/Content/basecss/ystep.css",                    
                       "~/Content/site.css",
                       "~/Content/skins.css",
+                      "~/Content/bootstrapValidator.css",
                       "~/Content/map.css",
                       "~/Content/basecss/module.css"));
-
-            bundles.Add(new StyleBundle("~/Content/components_css").Include());
 
         }     
     }

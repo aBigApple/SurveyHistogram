@@ -213,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\base.css" />
+    <Content Include="Content\bootstrapValidator.css" />
     <Content Include="Content\basecss\ystep.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -1077,15 +1078,14 @@
     <Content Include="Content\skins.css" />
     <Content Include="Content\img\user2-160x160.jpg" />
     <Content Include="Content\img\Mina.jpg" />
-    <Content Include="Content\reset.css" />
     <Content Include="Content\map.css" />
-    <Content Include="Content\Zthree.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\HtmlPage1.html" />
-    <Content Include="Scripts\basejs\module.form.validatee.js" />
+    <Content Include="Scripts\bootstrapValidator.js" />
+    <Content Include="Scripts\basejs\module.form.validate.js" />
     <Content Include="Scripts\basejs\module.js" />
     <Content Include="Scripts\basejs\navigation.js" />
     <Content Include="Scripts\basejs\setStep.js" />
@@ -1094,7 +1094,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\basecss\modalModule.scss" />
     <Content Include="Content\basecss\module.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1105,6 +1104,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\less.js" />
+    <Content Include="Scripts\less.min.js" />
     <Content Include="Scripts\map\api.js" />
     <Content Include="Scripts\map\AreaRestriction_min.js" />
     <Content Include="Scripts\map\jquery.mloading.js" />

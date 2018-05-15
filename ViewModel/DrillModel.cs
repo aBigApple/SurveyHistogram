@@ -14,84 +14,9 @@ namespace ViewModel
 
     class DrillModel
     {        
-        private string programName;//项目名称
-        private string drillCode;//钻孔编号
-        private double drillHoleStadardHeight;//孔口标高
-        private double drillLocation;//钻孔位置
-        private double coordinateX;//钻孔坐标X
-        private double coordinateY;//钻孔坐标Y
-        private string strataDescription;//地层描述
-        private string legendNO;//图例号
-        private double legendHeight;//图例高度
-        private double legendWidth;//图例宽度
-        private string legendExplation;//图例说明
-        private string contactRelation;//接触关系
-        private string coreTake;//岩芯采取
-        private string density;//密度
-        private string waterInclude;//含水量
-        private string remarks;//备注
-
-        public string StrataDescription
-        {
-            get { return strataDescription; }
-            set { strataDescription = value; }
-
-        }
-        public string LegendNO
-        {
-            get { return legendNO; }
-            set { legendNO = value; }
-
-        }
-        public double LegendHeight
-        {
-            get { return legendHeight; }
-            set { legendHeight = value; }
-
-        }
-        public double LegendWidth
-        {
-            get { return legendWidth; }
-            set { legendWidth = value; }
-
-        }
-        public string LegendExplation
-        {
-            get { return legendExplation; }
-            set { legendExplation = value; }
-
-        }
-        public string ContactRelation
-        {
-            get { return contactRelation; }
-            set { contactRelation = value; }
-
-        }
-        public string CoreTake
-        {
-            get { return coreTake; }
-            set { coreTake = value; }
-
-        }
-        public string Density
-        {
-            get { return density; }
-            set { density = value; }
-
-        }
-        public string WaterInclude
-        {
-            get { return waterInclude; }
-            set { waterInclude = value; }
-
-        }
-        public string Remarks
-        {
-            get { return remarks; }
-            set { remarks = value; }
-
-        }
+        
     }
+
 
     //工程
     class Project
@@ -123,6 +48,46 @@ namespace ViewModel
 
     }
 
+    public class DrillBasicInfo
+    {
+        public string projectName { get; set; }//工程名称
+        public string programName { get; set; }//项目名称
+        public string drillCode { get; set; }//钻孔编号
+        public double drillHoleHeight { get; set; }//孔口标高
+        public string drillLocation { get; set; }//钻孔位置
+        public double location1 { get; set; }//钻孔位置
+        public double location2 { get; set; }//钻孔位置
+        public double coordinateX { get; set; }//钻孔坐标X
+        public double coordinateY { get; set; }//钻孔坐标Y
+        public string situTest { get; set; }//原位测试
+        public string instrumentType { get; set; }//仪器型号
+        public string startDate { get; set; }//开始日期
+        public string endDate { get; set; }//结束日期
+        public double waterDepth { get; set; }//水位深度
+        public double infrastructureElevation { get; set; }//基建面高程
+        public string recommandBearing { get; set; }//推荐承载力
+        public string uniaxialPressure { get; set; }//单轴抗压强
+        public string model { get; set; }//模型     
+
+    }
+
+    public class drillStrata
+    {
+        public string strataAge { get; set; }//地层年代
+        public double strataDepth { get; set; }//开始深度
+        public double endDepth { get; set; }//结束深度
+        public double thinckness { get; set; }//厚度
+        public double bottonElevation { get; set; }//层底标高
+        public string strataDescribe { get; set; }//地层描述
+        public string legendName { get; set; }//图例号
+        public string legendExplation { get; set; }//图例说明
+        public string contactRelation { get; set; }//接触关系
+        public string coreTake { get; set; }//岩芯采取
+        public string density { get; set; }//密度
+        public string waterInclude { get; set; }//含水量
+        public string remarks { get; set; }//备注
+    }
+
     public class StrataDescribe
     {
         public string rockName{ get; set; }
@@ -138,6 +103,7 @@ namespace ViewModel
         public int drillID { get; set; }
 
     }
+
     public class Legend
     {
         public int legendID { get; set; }
