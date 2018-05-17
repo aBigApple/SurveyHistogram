@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Json" />
     <Reference Include="System.ServiceModel" />
@@ -43,10 +44,38 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WW, Version=4.0.35.21, Culture=neutral, PublicKeyToken=87d16b8f7b531b65, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadLib 4.0\WW.dll</HintPath>
+    </Reference>
+    <Reference Include="WW.Cad, Version=4.0.35.21, Culture=neutral, PublicKeyToken=87d16b8f7b531b65, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadLib 4.0\WW.Cad.dll</HintPath>
+    </Reference>
+    <Reference Include="WW.GL, Version=4.0.35.21, Culture=neutral, PublicKeyToken=87d16b8f7b531b65, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadLib 4.0\WW.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="WW.License, Version=4.0.0.0, Culture=neutral, PublicKeyToken=87d16b8f7b531b65, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadLib 4.0\WW.License.dll</HintPath>
+    </Reference>
+    <Reference Include="WW.Pdf, Version=4.0.35.21, Culture=neutral, PublicKeyToken=87d16b8f7b531b65, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadLib 4.0\WW.Pdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcosticHistogram.cs" />
+    <Compile Include="module\AcosticWave.cs" />
+    <Compile Include="module\ConvertFigureFormat.cs" />
+    <Compile Include="module\ExtensionLine.cs" />
+    <Compile Include="module\mPatternLibrary.cs" />
     <Compile Include="module\Pattern.cs" />
+    <Compile Include="RockHistogram.cs" />
+    <Compile Include="module\ScaleConversion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="module\RadomData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="module\patternLibriay\HW001.png" />

@@ -190,6 +190,7 @@ $(document).ready(function () {
             // Prevent form submission
             e.preventDefault();
 
+            //var data=$form.serialize()
             // Get the form instance
             var $form = $(e.target);
             var tableHtml = "";
@@ -198,7 +199,8 @@ $(document).ready(function () {
             //var num = $("#drillStrataTable").rows.length;
             tableHtml = '<tr id="tr' + num + '">'+'<td>' + $("#drillStrataTable").children().length + '</td>'
             for (i = 2; i < $form.context.length; i++) {
-                tableHtml += '<td>' + $form.context[i].value+ '</td>'
+                //var name = $form.context[i].attr("name").val();
+                tableHtml += '<td jsonmName=' + $form.context[i].name + ' name=' + $form.context[i].value + '>' + $form.context[i].value + '</td>'
             }
 
             tableHtml += '<td><a style="cursor: pointer; color: blue;" onclick="removeTr(' + num + ')">删除</a>'
@@ -262,10 +264,33 @@ $(document).ready(function () {
 });
 
 $(".submitStrataAllInfo").click(function () {
-    // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function (result) {
-                console.log(result);
-            }, 'json');
+    var args = {};
+    $("#drillStrataTable" + " tr:gt(0)").each(function (i) {
+        var data = new Object();
+        $(this).find("td").each(function () {
+            var name = $(this).attr("jsonmName");
+            data[name] = $(this).attr("name");
+        });
+        args[i] = data;
+    });
+    alert("data;" + JSON.stringify(args));
+    var paramStr = JSON.stringify(args);
+
+    $.ajax({
+        cache: true,//保留缓存数据
+        type: "POST",//为post请求
+        dataType: "json",
+        url: "/Home/SetDrillStrataInfo",//这是我在后台接受数据的文件名
+        data: paramStr,//
+        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        error: function (request) {//请求失败之后的操作
+            return;
+        },
+        success: function (data) {//请求成功之后的操作
+            console.log("success");
+        }
+    });
+    //return JSON.stringify(args);
 })
 //删除行
 

@@ -8,6 +8,11 @@ using System.Text;
 using ViewModel;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Net;
+using System.Web.Script.Serialization;
+using System.Runtime.Serialization.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace SurveyHistogram.Controllers
 {
@@ -52,12 +57,41 @@ namespace SurveyHistogram.Controllers
             strata.Add(info);
             return Content(info.strataDescribe);
         }
-        public ActionResult SetDrillStrataInfo(drillStrata info)
-        {
-            List<drillStrata> strata = new List<drillStrata>();
-            strata.Add(info);
-            return Content(info.strataDescribe);
+
+        //地层数据
+        [HttpPost]    
+        public ActionResult SetDrillStrataInfo()
+        {        
+            List<drillStrata> stratas =new List<drillStrata>();
+            var sr = new StreamReader(Request.InputStream);
+            string stream = sr.ReadToEnd() ;//获得json数据流
+        
+            var js = new System.Web.Script.Serialization.JavaScriptSerializer();
+            var jarr = js.Deserialize<Dictionary<string, drillStrata>>(stream);
+            foreach (var j in jarr)
+            {
+                var strata = j.Value;
+                drillStrata getinfo = new drillStrata();
+                getinfo.strataAge = strata.strataAge;
+                getinfo.strataDepth = strata.strataDepth;
+                getinfo.endDepth = strata.endDepth;
+                getinfo.thinckness = strata.thinckness;
+                getinfo.bottonElevation = strata.bottonElevation;
+                getinfo.strataDescribe = strata.strataDescribe;
+                getinfo.legendName = strata.legendName;
+                getinfo.legendExplation = strata.legendExplation;
+                getinfo.contactRelation = strata.contactRelation;
+                getinfo.coreTake = strata.coreTake;
+                getinfo.density = strata.density;
+                getinfo.waterInclude = strata.waterInclude;
+                getinfo.remarks = strata.remarks;
+                stratas.Add(getinfo);
+                //Console.WriteLine(string.Format("{0}:{1}", j.Key, j.Value));
+            }
+            
+            return null;
         }
+        
         //图例号传值
         public ActionResult GetLegend(Legend info)
         {

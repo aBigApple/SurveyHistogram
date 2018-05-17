@@ -198,7 +198,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <form id="drillStrataForm" class="form-horizontal" role="form"  action="~/Home/SetDrillStrataInfo" method="post">
+                            <form id="drillStrataForm" class="form-horizontal" role="form">
                                 <fieldset>
                                     <legend>添加地层</legend>
                                     <div class="form-group">
@@ -292,31 +292,36 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body table-responsive no-padding">
-                        <table id="drillStrataTable" class="table table-hover">
-                            <tr class="success">
-                                <th width="">序号</th>
-                                <th>地层代号</th>
-                                <th>开始深度</th>
-                                <th>结束深度</th>
-                                <th>厚度</th>
-                                <th>层底标高</th>
-                                <th>地层描述</th>
-                                <th>图例号</th>
-                                <th>图例说明</th>
-                                <th>接触关系</th>
-                                <th>岩芯采取</th>
-                                <th>含水量</th>
-                                <th>备注</th>
-                            </tr>
-                        </table>
+                        <div class="col-lg-12">
+                            <form id="drillStrataTableForm" class="form-horizontal" role="form" action="~/Home/SetDrillStrataInfo" method="post">
+                                <table id="drillStrataTable" class="table table-hover">
+                                    <tr class="success">
+                                        <th width="">序号</th>
+                                        <th>地层代号</th>
+                                        <th>开始深度</th>
+                                        <th>结束深度</th>
+                                        <th>厚度</th>
+                                        <th>层底标高</th>
+                                        <th>地层描述</th>
+                                        <th>图例号</th>
+                                        <th>图例说明</th>
+                                        <th>接触关系</th>
+                                        <th>岩芯采取</th>
+                                        <th>含水量</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </table>
+                                <div class='step-button' style="margin-top: 50px;">
+                                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                                    <button type='button' class='submitStrataAllInfo btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                </div>                            
+                            </form>
+                        </div>
+                        
                     </div>
                     <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
-                <div class='step-button' style="margin-top: 50px;">
-                    <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
-                    <button type='submit' class='submitStrataAllInfo btn btn-default nextBtn' id='nextBtn'>下一步</button>
-                </div>
+                <!-- /.box --> 
             </div>
             <div id="page3" class="stepPage">
                 <!-- 类型  -->
