@@ -13,6 +13,7 @@ using System.Web.Script.Serialization;
 using System.Runtime.Serialization.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Common;
 
 namespace SurveyHistogram.Controllers
 {
@@ -45,16 +46,22 @@ namespace SurveyHistogram.Controllers
                 return null;
             }
         }
+        // CommonTest com = new CommonTest();
+
         //基本信息传值
+        [HttpPost]
         public ActionResult GetDrillBasicInfo(DrillBasicInfo info)
         {
-            return Content(info.projectName);
+            CommonTest.driiiBasicInfo = info;
+            //this.driiiBasicInfo = info;
+          return null;
         }
         //地层信息传值
-        public ActionResult GetDrillStrataModel(drillStrata info)
+        public ActionResult GetDrillStrataModel(DrillStrata info)
         {
-            List<drillStrata> strata = new List<drillStrata>();
+            List<DrillStrata> strata = new List<DrillStrata>();
             strata.Add(info);
+            //this.drillStrata = info;
             return Content(info.strataDescribe);
         }
 
@@ -62,18 +69,18 @@ namespace SurveyHistogram.Controllers
         [HttpPost]    
         public ActionResult SetDrillStrataInfo()
         {        
-            List<drillStrata> stratas =new List<drillStrata>();
+            List<DrillStrata> stratas =new List<DrillStrata>();
             var sr = new StreamReader(Request.InputStream);
             string stream = sr.ReadToEnd() ;//获得json数据流
         
             var js = new System.Web.Script.Serialization.JavaScriptSerializer();
-            var jarr = js.Deserialize<Dictionary<string, drillStrata>>(stream);
+            var jarr = js.Deserialize<Dictionary<string, DrillStrata>>(stream);
             foreach (var j in jarr)
             {
                 var strata = j.Value;
-                drillStrata getinfo = new drillStrata();
+                DrillStrata getinfo = new DrillStrata();
                 getinfo.strataAge = strata.strataAge;
-                getinfo.strataDepth = strata.strataDepth;
+                getinfo.startDepth = strata.startDepth;
                 getinfo.endDepth = strata.endDepth;
                 getinfo.thinckness = strata.thinckness;
                 getinfo.bottonElevation = strata.bottonElevation;
@@ -88,7 +95,8 @@ namespace SurveyHistogram.Controllers
                 stratas.Add(getinfo);
                 //Console.WriteLine(string.Format("{0}:{1}", j.Key, j.Value));
             }
-            
+            CommonTest.drillStrataList = stratas;
+            //this.drillStrataList = stratas;
             return null;
         }
         
@@ -117,6 +125,21 @@ namespace SurveyHistogram.Controllers
             return Content(rockName + "*****" + decencyLevel);
         }
 
+        //柱状图比例尺
+        public void SetDrillScale(DrillHistogram info)
+        {
+            CommonTest.drillHistogram = info;
+            makeHistogram();
+            //this.drillHistogram = info;
+            //return null;
+        }
+
+        public ActionResult makeHistogram()
+        {
+            RockHistogram makedrill = new RockHistogram();
+            makedrill.setDrillHistogramData(CommonTest.driiiBasicInfo, CommonTest.drillStrataList, CommonTest.drillHistogram);
+            return null;
+        }
 
         public ActionResult About()
         {

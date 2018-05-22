@@ -71,10 +71,10 @@ namespace ViewModel
 
     }
 
-    public class drillStrata
+    public class DrillStrata
     {
         public string strataAge { get; set; }//地层年代
-        public double strataDepth { get; set; }//开始深度
+        public double startDepth { get; set; }//开始深度
         public double endDepth { get; set; }//结束深度
         public double thinckness { get; set; }//厚度
         public double bottonElevation { get; set; }//层底标高
@@ -114,5 +114,14 @@ namespace ViewModel
         public int drillID { get; set; }
         public int strataID { get; set; }
 
+    }
+
+    public class DrillHistogram
+    {
+        //public int drillHistogramID { get; set; }//
+        //public int drillID { get; set; }//
+        //public int histogramTypeID { get; set; }//
+        public double histogramScale { get; set; }//比例尺
+        
     }
 }

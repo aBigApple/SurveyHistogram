@@ -29,7 +29,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body"> 
-                        <form id="drillBasicForm" class="form-horizontal" role="form" method="post" action="~/Home/">
+                        <form id="drillBasicForm" class="form-horizontal" role="form" method="post" action="">
                             <div  class="col-lg-8 col-lg-offset-2">
                                 <fieldset>
                                     <legend>项目信息</legend>
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label">项目名称</label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" name="programtName" placeholder="必填项">
+                                            <input type="text" class="form-control" name="programName" placeholder="必填项">
                                         </div>
                                     </div>
                                     <hr />                                   
@@ -178,7 +178,7 @@
                                 </fieldset>
                                 <div class='step-button'>
                                     <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
-                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                    <button type='submit' class='submitBasicInfo btn btn-default nextBtn' id='nextBtn'>下一步</button>
                                 </div>
                             </div>                            
                         </form>
@@ -198,7 +198,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <form id="drillStrataForm" class="form-horizontal" role="form">
+                            <form id="drillStrataForm" class="form-horizontal" role="form"  method="post"  action="">
                                 <fieldset>
                                     <legend>添加地层</legend>
                                     <div class="form-group">
@@ -233,7 +233,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">地层描述</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" id="strataDescribe" style="width: 100%;" placeholder="请输入..." data-toggle="modal" data-target="#modal-dicengmiaoshu">
+                                            <input class="form-control" id="strataDescribe" name="strataDescribe" style="width: 100%;" placeholder="请输入..." data-toggle="modal" data-target="#modal-dicengmiaoshu">
                                         </div>
                                         <label class="col-sm-2 control-label">图例号</label>
                                         <div class="col-sm-4">
@@ -332,7 +332,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <form id="drillStrataForm" class="form-horizontal" role="form">
+                            <form id="drillTypeForm" class="form-horizontal" role="form">
                                 <fieldset>
                                     <legend>柱状图成图类型</legend>
                                     <div class="form-group">
@@ -347,7 +347,7 @@
                                 </fieldset>
                                 <div class='step-button'>
                                     <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
-                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                    <button type='button' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
                                 </div>
                             </form>
                         </div>
@@ -367,26 +367,26 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            <form id="drillStrataForm" class="form-horizontal" role="form">
+                            <form id="drillScaleForm" class="form-horizontal" role="form"  method="post" action="~/Home/SetDrillScale">
                                 <fieldset>
                                     <legend>柱状图比例尺</legend>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">比例尺</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" id="drillScale" name="drillScale" style="width: 100%;" placeholder="必填项">
+                                            <input class="form-control" id="drillScale" name="histogramScale" style="width: 100%;" placeholder="必填项:只需输入柱状图比例尺分母">
                                         </div>
                                     </div>
                                 </fieldset>
                                 <div class='step-button'>
                                     <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
-                                    <button type='submit' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+                                    <button type='button' class='makeHistogram btn btn-primary nextBtn' id='nextBtn'>成图</button>
+                                   
                                 </div>
                             </form>
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary" id="">成图</button>
                     </div>
                 </div>
             </div>
@@ -399,14 +399,18 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="col-lg-10 col-lg-offset-1">
-                            
+                            <fieldset>
+                                <legend>柱状图预览</legend>
+                                <div class="form-group">
+                                    
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <div class='step-button' style="margin-top: 50px;">
-                            <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
-                            <button type='button' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
+
                         </div>
                     </div>
                 </div>

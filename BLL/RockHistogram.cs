@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViewModel;
 using WW.Cad.IO;
 using WW.Cad.Model;
 using WW.Cad.Model.Entities;
@@ -19,12 +20,12 @@ namespace BLL.module
     //  文件名：RockHistogram 
     //  for:岩石钻孔柱状图模型
     //==============================================================
-    class RockHistogram
+    public class RockHistogram
     {
         DxfModel model;
         DxfBlock block;
         double plottingScale;
-        DataTable dt;
+        //DataTable dt;
 
         /*public AcosticBoreholeTable()
         {
@@ -42,97 +43,55 @@ namespace BLL.module
         private string projectName;
         private string programName;
         private string drillCode;
-        private string drillHoleStadardHeight;//孔口标高
+        private double drillHoleStadardHeight;//孔口标高
         private string drillLocation;
-        private string drillLocation1;
-        private string drillLocation2;
-        private string applicationCoordinateX;
-        private string applicationCoordinateY;
+        private double drillLocation1;
+        private double drillLocation2;
+        private double applicationCoordinateX;
+        private double applicationCoordinateY;
         private string combSituTest;
         private string applicationVersion;
         private string drillStartTime;
         private string drillEndTime;
-        private string waterDeep;
+        private double waterDeep;
         private string capitalHeight;
         private string recommandBearing;
         private string uniaxialCompressiveStreth;
         private string mmodel;
 
+
+        DrillBasicInfo driiiBasicInfo;
+        List<DrillStrata> drillStrataList;
+        StrataDescribe strataDescribe;
+        DrillHistogram drillHistogram;
+
         /// <summary>
         /// 为表格获取基本表数据的方法
         /// </summary>
-        public void setBasicTableData(DataTable dt, double plottingScale, string projectName, string programName, string drillCode, string drillHoleStadardHeight,
-             string drillLocation, string drillLocation1, string drillLocation2, string applicationCoordinateX,
-               string applicationCoordinateY, string drillStartTime,
-                 string drillEndTime, string waterDeep, string capitalHeight, string recommandBearing, string uniaxialCompressiveStreth)
-
+        public void setDrillHistogramData(DrillBasicInfo info,List<DrillStrata> drillStrataList,DrillHistogram drillHistogram)
         {
-            this.dt = dt;
-            this.plottingScale = plottingScale;
-            this.projectName = projectName;
-            this.programName = programName;
-            this.drillCode = drillCode;
-            this.drillHoleStadardHeight = drillHoleStadardHeight;
-            this.drillLocation = drillLocation;
-            this.drillLocation1 = drillLocation1;
-            this.drillLocation2 = drillLocation2;
-            this.applicationCoordinateX = applicationCoordinateX;
-            this.applicationCoordinateY = applicationCoordinateY;
-            this.drillStartTime = drillStartTime;
-            this.drillEndTime = drillEndTime;
-            this.waterDeep = waterDeep;
-            this.capitalHeight = capitalHeight;
-            this.recommandBearing = recommandBearing;
-            this.uniaxialCompressiveStreth = uniaxialCompressiveStreth;
+            //this.dt = dt;
+            this.drillStrataList = drillStrataList;
+            this.plottingScale = drillHistogram.histogramScale;
+            this.projectName = info.projectName;
+            this.programName = info.programName;
+            this.drillCode = info.drillCode;
+            this.drillHoleStadardHeight = info.drillHoleHeight;
+            this.drillLocation = info.drillLocation;
+            this.drillLocation1 = info.location1;
+            this.drillLocation2 = info.location2;
+            this.applicationCoordinateX = info.coordinateX;
+            this.applicationCoordinateY = info.coordinateY;
+            this.drillStartTime = info.startDate;
+            this.drillEndTime = info.endDate;
+            this.waterDeep = info.waterDepth;
+            //this.capitalHeight = info.;
+            this.recommandBearing = info.recommandBearing;
+            this.uniaxialCompressiveStreth = info.uniaxialPressure;
 
-            //createOneTable();
+            createOneTable();
         }
 
-        string strataCode;//地层编号
-        string strataID;//地层代号
-        double startDeep;//开始深度
-        double endDeep;//结束深度
-        double thickness;//厚度
-        double bottomElevation;//层底标高
-        string strataDescription;//地层描述
-        string legendNO;//图例号
-        double legendHeight;//图例高度
-        double legendWidth;//图例宽度
-        string legendExplation;//图例说明
-        string contactRelation;//接触关系
-        string coreTake;//岩芯采取
-        string density;//密度
-        string waterInclude;//含水量
-        string remarks;//备注
-
-        /// <summary>
-        /// 获得地质表数据的方法
-        /// </summary>
-        public void setGeologyData(string strataCode, string strataID, double startDeep, double endDeep,
-            double thickness, double bottomElevation, string strataDescription, string legendNO, double legendHeight,
-             double legendWidth, string legendExplation, string contactRelation, string coreTake,
-               string density, string waterInclude, string remarks)
-        {
-            this.strataCode = strataCode;//地层编号
-            this.strataID = strataID;//地层代号
-            this.startDeep = startDeep;//开始深度
-            this.endDeep = endDeep;//结束深度
-            this.thickness = thickness;//厚度
-            this.bottomElevation = bottomElevation;//层底标高
-            this.strataDescription = strataDescription;//地层描述
-            this.legendNO = legendNO;//图例号
-            this.legendHeight = legendHeight;//图例高度
-            this.legendWidth = legendWidth;//图例宽度
-            this.legendExplation = legendExplation;//图例说明
-            this.contactRelation = contactRelation;//接触关系
-            this.coreTake = coreTake;//岩芯采取
-            this.density = density;//密度
-            this.waterInclude = waterInclude;//含水量
-            this.remarks = remarks;//备注
-
-            createOneTable();//直接调用建表
-
-        }
 
         /// <summary>
         /// 创建一张表格的方法
@@ -791,10 +750,9 @@ namespace BLL.module
             string mstr;
             double formerExtensionLineHeight = -23;//上一个花纹扩展线的位置
             double end = 0;
-            foreach (DataRow dr in dt.Rows)
+            for(int i = 0; i < drillStrataList.Count; i++)
             {
-                if (dr[2] == null || dr[2].ToString() == "" ||
-                    dr[3] == null || dr[3].ToString() == "")
+                if ( drillStrataList[i].startDepth.ToString() == "" || drillStrataList[i].endDepth.ToString() == "")
                 {
                     end = -scaleConversionForLastPattern(end) - 23;//比例尺转换
                     //竖直分线  
@@ -821,28 +779,28 @@ namespace BLL.module
                     //string graphicRemark;//备注 15
                     try
                     {
-                        if (dr[1] == null || dr[1].ToString() == "")
+                        if (drillStrataList[i].strataAge == null || drillStrataList[i].strataAge.ToString() == "")
                         {
                             graphicMark = "";
                         }
                         else
                         {
-                            graphicMark = dr[0].ToString();
+                            graphicMark = "";
                         }
-                        if (dr[10] == null || dr[10].ToString() == "")
+                        if (drillStrataList[i].coreTake == null || drillStrataList[i].coreTake.ToString() == "")
                         {
-                            coreTake = "";
+                            coreTake = "..";
                         }
                         else
                         {
-                            coreTake = dr[10].ToString();
+                            coreTake = drillStrataList[i].coreTake.ToString();
                         }
-                        graphicStartDeep = double.Parse(dr[2].ToString());
-                        graphicEndDeep = double.Parse(dr[3].ToString());
-                        graphicThick = double.Parse(dr[4].ToString());
-                        graphicButtomHeight = double.Parse(dr[5].ToString());
-                        graphicTranslation = dr[6].ToString();
-                        coreTake = dr[10].ToString();
+                        graphicStartDeep = double.Parse(drillStrataList[i].startDepth.ToString());
+                        graphicEndDeep = double.Parse(drillStrataList[i].endDepth.ToString());
+                        graphicThick = double.Parse(drillStrataList[i].thinckness.ToString());
+                        graphicButtomHeight = double.Parse(drillStrataList[i].bottonElevation.ToString());
+                        graphicTranslation = drillStrataList[i].strataDescribe.ToString();
+                        coreTake = drillStrataList[i].coreTake.ToString();
                         //graphicRemark = item.Cells[15].Value.ToString();
 
                         ExtensionLine extLine = new ExtensionLine(plottingScale);
@@ -853,9 +811,9 @@ namespace BLL.module
 
                         end = graphicEndDeep;
 
-                        if ((dr[7] != null) && (dr[7].ToString() != ""))
+                        if ((drillStrataList[i].legendName != null) && (drillStrataList[i].legendName.ToString() != ""))
                         {
-                            string mrockName = dr[7].ToString();
+                            string mrockName = drillStrataList[i].legendName.ToString();
                             addPattern(mrockName, graphicStartDeep, graphicEndDeep);
                         }
 
@@ -867,10 +825,11 @@ namespace BLL.module
                     }
                     //ExtensionLine extLine = new ExtensionLine(plottingScale);
                     mstr = '\n' + "您有值未正确填入表格中！" + '\n' + "（请注意漏填，数据格式等问题";
-
+                    //return mstr;
                 }
             }
-            //return mstr;
+            
+           
         }
 
         /// <summary>

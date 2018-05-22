@@ -1181,6 +1181,10 @@
       <Project>{8578af64-a0d3-4110-ac18-7ded05be705f}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7190556d-8f8c-4d46-b65c-a37c63b4d35d}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.csproj">
       <Project>{db3aecc6-f87d-4482-85c7-f01beb2d6386}</Project>
       <Name>ViewModel</Name>

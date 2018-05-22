@@ -45,6 +45,10 @@ $(document).ready(function () {
                         regexp: {
                             regexp: /\d/,
                             message: '请输入数字！'
+                        },
+                        regexp: {
+                            regexp: /\S/,
+                            message: '此项不能为空！'
                         }
                     }
                 },
@@ -106,21 +110,6 @@ $(document).ready(function () {
                     }
                 }
             }
-        })
-        .on('success.form.bv', function (e) {
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function (result) {
-                console.log(result);
-            }, 'json');
         });
     //地层数据验证并提交
     $('#drillStrataForm')
@@ -214,11 +203,11 @@ $(document).ready(function () {
             //num++;
 
             // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function (result) {
-                console.log(result);
-            }, 'json');
+            //var bv = $form.data('bootstrapValidator');
+            //// Use Ajax to submit form data
+            //$.post($form.attr('action'), $form.serialize(), function (result) {
+            //    console.log(result);
+            //}, 'json');
             
         });
     //地层描述验证并提交
@@ -260,8 +249,63 @@ $(document).ready(function () {
                 console.log(result);
             }, 'json');
         });
-    //
+    //比例尺
+    $('#drillScaleForm')
+        .bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                drillScale: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: '此项不能为空！'
+                        },
+                        regexp: {
+                            regexp: /\d/,
+                            message: '请输入数字！'
+                        }
+                    }
+                }
+            }
+        })
+        .on('success.form.bv', function (e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function (result) {
+                console.log(result);
+            }, 'json');
+        });
 });
+
+$(".submitBasicInfo").click(function () {
+    $.ajax({
+        cache: true,//保留缓存数据
+        type: "POST",//为post请求
+        url: "/Home/GetDrillBasicInfo",//这是我在后台接受数据的文件名
+        data: $('#drillBasicForm').serialize(),//
+        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        error: function (request) {//请求失败之后的操作
+            return;
+        },
+        success: function (data) {//请求成功之后的操作
+            console.log("success");
+        }
+    });
+    return false;
+})
 
 $(".submitStrataAllInfo").click(function () {
     var args = {};
@@ -292,6 +336,28 @@ $(".submitStrataAllInfo").click(function () {
     });
     //return JSON.stringify(args);
 })
+$(".makeHistogram").click(function () {
+    $.ajax({
+        cache: true,//保留缓存数据
+        type: "POST",//为post请求
+        url: "/Home/SetDrillScale",//这是我在后台接受数据的文件名
+        data: $('#drillScaleForm').serialize(),//
+        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        error: function (request) {//请求失败之后的操作
+            return;
+        },
+        success: function (data) {//请求成功之后的操作
+            console.log("success");
+        }
+    });
+    return false;
+    
+})
+
+function makeHistogram() {
+   
+}
+
 //删除行
 
 function 

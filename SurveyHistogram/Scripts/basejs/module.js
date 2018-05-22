@@ -67,6 +67,7 @@ $("#strataDescribeOK").click(function () {
         numArr.push(txt.eq(i).val()); // 将文本框的值添加到数组中
     }
     $("#strataDescribe").attr("value", numArr);
+    $("#strataDescribe").attr("text", numArr);
     $("#strataDescribe").attr("onmouseover", numArr);
     $(".mclose").click();
     return false;
