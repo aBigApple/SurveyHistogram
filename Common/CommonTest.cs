@@ -19,5 +19,6 @@ namespace Common
         public static List<DrillStrata> drillStrataList { get; set; }
         public static StrataDescribe strataDescribe { get; set; }
         public static DrillHistogram drillHistogram { get; set; }
+        public static string histogramType { get; set; }
     }
 }

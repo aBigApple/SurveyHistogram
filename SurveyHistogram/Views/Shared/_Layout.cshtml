@@ -69,13 +69,11 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">菜 单</li>
-                <li class="active treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>钻孔成图</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
+                <li class="active treeview">@Html.ActionLink("钻孔柱状图成图系统", "Index", "Home")
+                    <i class="fa fa-dashboard"></i> <span>钻孔成图</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                     <ul id="dir-ul" class="fix_ul treeview-menu">
                         <li class="active" data-value="1"><a href="#"><i class="fa fa-circle-o"></i> 岩石钻孔 </a></li>
                         <li data-value="2"><a href="#"><i class="fa fa-circle-o"></i> 声波钻孔</a></li>
@@ -90,8 +88,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 成图地图统计分析</a></li>
-                        <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 成图时间对比</a></li>
+                        <li><i class="fa fa-circle-o"></i> 成图地图统计分析</li>
+                        <li><i class="fa fa-circle-o"></i> 成图时间对比</li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -103,8 +101,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 钻孔显示</a></li>
-                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 缓冲区分析</a></li>
+                        <li><i class="fa fa-circle-o"></i> 钻孔显示</li>
+                        <li><i class="fa fa-circle-o"></i> 缓冲区分析</li>
                     </ul>
                 </li>
             </ul>

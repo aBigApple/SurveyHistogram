@@ -55,8 +55,8 @@ namespace ViewModel
         public string drillCode { get; set; }//钻孔编号
         public double drillHoleHeight { get; set; }//孔口标高
         public string drillLocation { get; set; }//钻孔位置
-        public double location1 { get; set; }//钻孔位置
-        public double location2 { get; set; }//钻孔位置
+        public string location1 { get; set; }//钻孔位置
+        public string location2 { get; set; }//钻孔位置
         public double coordinateX { get; set; }//钻孔坐标X
         public double coordinateY { get; set; }//钻孔坐标Y
         public string situTest { get; set; }//原位测试
@@ -123,5 +123,9 @@ namespace ViewModel
         //public int histogramTypeID { get; set; }//
         public double histogramScale { get; set; }//比例尺
         
+    }
+    public class DillHistogramType
+    {
+        public string type { get; set; }
     }
 }

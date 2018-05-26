@@ -354,9 +354,25 @@ $(".makeHistogram").click(function () {
     
 })
 
-function makeHistogram() {
-   
-}
+//确定柱状图类型
+$(".makeType").click(function () {
+    $.ajax({
+        cache: true,//保留缓存数据
+        type: "POST",//为post请求
+        url: "/Home/SetDrillType",//这是我在后台接受数据的文件名
+        data: $('#drillTypeForm').serialize(),//
+        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        error: function (request) {//请求失败之后的操作
+            return;
+        },
+        success: function (data) {//请求成功之后的操作
+            console.log("success");
+        }
+    });
+    return false;
+
+})
+
 
 //删除行
 

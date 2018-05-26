@@ -213,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\base.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrapValidator.css" />
     <Content Include="Content\basecss\ystep.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1084,6 +1085,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\HtmlPage1.html" />
+    <Content Include="Scripts\basejs\pdfShow.js" />
     <Content Include="Scripts\bootstrapValidator.js" />
     <Content Include="Scripts\basejs\module.form.validate.js" />
     <Content Include="Scripts\basejs\module.js" />
@@ -1115,6 +1117,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Views\Home\viewer.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

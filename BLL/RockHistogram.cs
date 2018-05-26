@@ -45,8 +45,8 @@ namespace BLL.module
         private string drillCode;
         private double drillHoleStadardHeight;//孔口标高
         private string drillLocation;
-        private double drillLocation1;
-        private double drillLocation2;
+        private string drillLocation1;
+        private string drillLocation2;
         private double applicationCoordinateX;
         private double applicationCoordinateY;
         private string combSituTest;
@@ -68,7 +68,7 @@ namespace BLL.module
         /// <summary>
         /// 为表格获取基本表数据的方法
         /// </summary>
-        public void setDrillHistogramData(DrillBasicInfo info,List<DrillStrata> drillStrataList,DrillHistogram drillHistogram)
+        public void setDrillHistogramData(DrillBasicInfo info, List<DrillStrata> drillStrataList, DrillHistogram drillHistogram)
         {
             //this.dt = dt;
             this.drillStrataList = drillStrataList;
@@ -89,7 +89,7 @@ namespace BLL.module
             this.recommandBearing = info.recommandBearing;
             this.uniaxialCompressiveStreth = info.uniaxialPressure;
 
-            createOneTable();
+            createOneTable();//开始创建柱状图入口
         }
 
 
@@ -125,8 +125,9 @@ namespace BLL.module
                 table1.InsertionPoint = new Point3D(0d, 0d, 0d);
 
                 //设置表格的行数和列数
+                //各行高
                 table1.RowCount = 3;
-                table1.ColumnCount = 9;
+                table1.ColumnCount = 10;
                 table1.Rows.ElementAt<DxfTableRow>(0).Height = 18d;
                 table1.Rows.ElementAt<DxfTableRow>(1).Height = 5d;
                 table1.Rows.ElementAt<DxfTableRow>(2).Height = 255;
@@ -143,39 +144,39 @@ namespace BLL.module
                 table1.Columns.ElementAt<DxfTableColumn>(5).Width = 40;
                 table1.Columns.ElementAt<DxfTableColumn>(6).Width = 15;
                 table1.Columns.ElementAt<DxfTableColumn>(7).Width = 20;
-                table1.Columns.ElementAt<DxfTableColumn>(8).Width = 33;
+                table1.Columns.ElementAt<DxfTableColumn>(8).Width = 17;
+                table1.Columns.ElementAt<DxfTableColumn>(9).Width = 16;
 
-                //table1.Rows[0].Cells[0].Contents.Add(new DxfValueFormat.String(), "地层时代");
                 DxfMText drillHoleStadHeight = new DxfMText(
                     @"地" + '\n' + "层" + '\n' + "时" + '\n' + "代",
                     new Point3D(2.5d, -2d, 0d),
                     2d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[1].Contents.Add(new DxfValueFormat.String(), "层底厚度"+'\n'+"（米）");
+
                 drillHoleStadHeight = new DxfMText(
                     @"层 底" + '\n' + "厚 度" + '\n' + "(米)",
                     new Point3D(12.5d, -2d, 0d),
                     2d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[2].Contents.Add(new DxfValueFormat.String(), "层厚（米）");
+
                 drillHoleStadHeight = new DxfMText(
                     @" 层 " + '\n' + " 厚 " + '\n' + "(米)",
                     new Point3D(24d, -2d, 0d),
                     2d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[3].Contents.Add(new DxfValueFormat.String(), "层底标高");
+
                 drillHoleStadHeight = new DxfMText(
                     @"层 底" + '\n' + "标 高" + '\n' + "(米)",
                     new Point3D(33d, -2d, 0d),
                     2d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[4].Contents.Add(new DxfValueFormat.String(), "柱状剖面"+'\n'+"（比例尺）1:500");
+
                 drillHoleStadHeight = new DxfMText(
                     @" 柱 状 剖 面" + '\n' + "  (比例尺)" + '\n' + "   1:" + plottingScale,
                     new Point3D(46d, -2d, 0d),
                     2d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[5].Contents.Add(new DxfValueFormat.String(), "所通过岩层的描述"+'\n'+"（颗粒成分、状态、"+'\n'+"颜色、掺杂物等）");
+
                 drillHoleStadHeight = new DxfMText(
                     @" 所  通  过  岩  层  的  描  述" + '\n',
                     new Point3D(66d, -3.5d, 0d),
@@ -186,107 +187,107 @@ namespace BLL.module
                     new Point3D(66d, -9d, 0d),
                     1.5d
                     ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[6].Contents.Add(new DxfValueFormat.String(), "岩芯采取率"+"（%）");
+
                 drillHoleStadHeight = new DxfMText(
                    @"岩芯" + '\n' + "采取率" + '\n' + "（%）",
                    new Point3D(106d, -2d, 0d),
                    2d
                    ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[7].Contents.Add(new DxfValueFormat.String(), "原位测试");
+
                 drillHoleStadHeight = new DxfMText(
                   @"原 位 测 试",
                   new Point3D(121d, -2d, 0d),
                   2d
                   ); block.Entities.Add(drillHoleStadHeight);
-                //table1.Rows[0].Cells[8].Contents.Add(new DxfValueFormat.String(), "声波曲线");
-                drillHoleStadHeight = new DxfMText(
-                 @"       声  波  曲  线" + '\n' + "            (km/s)",
-                 new Point3D(141d, -3.5d, 0d),
-                 2d
-                 ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[0].Contents.Add(new DxfValueFormat.String(), "1");
+                drillHoleStadHeight = new DxfMText(
+                @" 采 " + '\n' + " 样 " + '\n' + "(米)",
+                new Point3D(141d, -2d, 0d),
+                2d
+                ); block.Entities.Add(drillHoleStadHeight);
+
+                drillHoleStadHeight = new DxfMText(
+                @" 备 " + '\n' + '\n' + " 注 ",
+                new Point3D(158d, -2d, 0d),
+                2d
+                ); block.Entities.Add(drillHoleStadHeight);
+                
+                //列头的序号
                 drillHoleStadHeight = new DxfMText(
                  @"1",
                  new Point3D(3d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[1].Contents.Add(new DxfValueFormat.String(), "2");
+
                 drillHoleStadHeight = new DxfMText(
                  @"2",
                  new Point3D(14.5d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[2].Contents.Add(new DxfValueFormat.String(), "3");
+
                 drillHoleStadHeight = new DxfMText(
                  @"3",
                  new Point3D(25d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[3].Contents.Add(new DxfValueFormat.String(), "4");
+
                 drillHoleStadHeight = new DxfMText(
                  @"4",
                  new Point3D(37.5d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[4].Contents.Add(new DxfValueFormat.String(), "5");
+
                 drillHoleStadHeight = new DxfMText(
                  @"5",
                  new Point3D(52.5d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[5].Contents.Add(new DxfValueFormat.String(), "6");
+
                 drillHoleStadHeight = new DxfMText(
                  @"6",
                  new Point3D(85d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[6].Contents.Add(new DxfValueFormat.String(), "7");
+
                 drillHoleStadHeight = new DxfMText(
                  @"7",
                  new Point3D(109.5d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[7].Contents.Add(new DxfValueFormat.String(), "8");
+
                 drillHoleStadHeight = new DxfMText(
                  @"8",
                  new Point3D(127d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
-                //table1.Rows[1].Cells[8].Contents.Add(new DxfValueFormat.String(), "9");
+
                 drillHoleStadHeight = new DxfMText(
                  @"9",
-                 new Point3D(153.5d, -19d, 0d),
+                 new Point3D(149d, -19d, 0d),
+                 2d
+                 ); block.Entities.Add(drillHoleStadHeight);
+
+                drillHoleStadHeight = new DxfMText(
+                 @"10",
+                 new Point3D(166.5d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
 
-                //table1.Rows[0].Cells[0].CellStyleOverrides.ContentColor = Colors.DarkGray;
-                //在某一行获取当前时间的方法
-                //table1.Rows[2].Cells[8].Contents.Add(DxfValueFormat.Date.CreateRegionalLongDateTime(), DateTime.Now);
-                //*********下面这一句是用来干嘛的？？？？？？？？？？？
-                //用来给单元格赋值为数字类型
-                //table1.Rows[2].Cells[7].Contents.Add(new DxfValueFormat.DecimalNumber(LinearUnitFormat.Decimal), 123.45d);
-
-                // Merge the title row cells.  融合标题行
-                //table.MergedCellRanges.Add(new DxfTableCellRange(0, 0, 0, 2));
-                // This demonstrates a merged cell block of 3 by 2 cells.
-                //table.MergedCellRanges.Add(new DxfTableCellRange(2, 0, 3, 2));
-                //model.Entities.Add(table1);
                 block.Entities.Add(table1);
             }
 
             {
                 //************table2*************tableStyle2**************
-                //set table borderStyle 此处DxfTableStyle括号中的名字，每个table的都不能相同
+                //图头部分
                 DxfTableStyle dxfTableStyle2 = new DxfTableStyle("Single2 bordered" + str);
 
                 dxfTableStyle2.DataCellStyle.SetAllBordersBorderType(BorderType.Single);
@@ -296,9 +297,7 @@ namespace BLL.module
                 dxfTableStyle2.HeaderCellStyle.SetAllBordersColor(Colors.DarkGray);
                 //有该行的时候两个表格不能同时生成???***但是没有该行生成的图形文件又不完整
                 model.TableStyles.Add(dxfTableStyle2);
-                //model.TableStyles.Insert(1,dxfTableStyle2);
-
-
+                
                 //定义一个拥有给定格式的表格
                 DxfTable table2 = new DxfTable(dxfTableStyle2);
                 //表格插入点的位置
@@ -312,9 +311,6 @@ namespace BLL.module
                     column.Width = 176d;
                 }
 
-                //table2.Rows[0].Cells[0].Contents.Add(new DxfValueFormat.String(), "钻孔柱状剖面图");
-                //table2.Rows[0].Cells[0].CellStyleOverrides.ContentColor = Colors.Red;       
-                //model.Entities.Add(table2);
                 block.Entities.Add(table2);
             }
 
@@ -413,210 +409,7 @@ namespace BLL.module
                 drillCodeine2.LineType = drillCodeLineType2;
                 block.Entities.Add(drillCodeine2);
             }
-
-            {
-                //声波曲线的长线条
-                DxfLineType drillCodeLineType = new DxfLineType("TestLine11" + str);
-                model.LineTypes.Add(drillCodeLineType);
-                {
-                    //长线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(144d, -23d, 0d);
-                    drillCodeine.End = new Point3D(144d, -278d, 0d);
-                    drillCodeine.Color = EntityColors.Gray;
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"2",
-                    new Point3D(143.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(144d, -16d, 0d);
-                    drillCodeine.End = new Point3D(144d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(141.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(141.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-
-
-                DxfLineType drillCodeLineType1 = new DxfLineType("TestLine12" + str);
-                model.LineTypes.Add(drillCodeLineType1);
-                {
-                    DxfLine drillCodeine1 = new DxfLine();
-                    drillCodeine1.Start = new Point3D(149d, -23d, 0d);
-                    drillCodeine1.End = new Point3D(149d, -278d, 0d);
-                    drillCodeine1.Color = EntityColors.Gray;
-                    drillCodeine1.LineType = drillCodeLineType1;
-                    block.Entities.Add(drillCodeine1);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"3",
-                    new Point3D(148.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(149d, -16d, 0d);
-                    drillCodeine.End = new Point3D(149d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(146.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(146.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-
-                DxfLineType drillCodeLineType2 = new DxfLineType("TestLine13" + str);
-                model.LineTypes.Add(drillCodeLineType2);
-                {
-                    DxfLine drillCodeine2 = new DxfLine();
-                    drillCodeine2.Start = new Point3D(154d, -23d, 0d);
-                    drillCodeine2.End = new Point3D(154d, -278d, 0);
-                    drillCodeine2.Color = EntityColors.Gray;
-                    drillCodeine2.LineType = drillCodeLineType2;
-                    block.Entities.Add(drillCodeine2);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"4",
-                    new Point3D(153.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(154d, -16d, 0d);
-                    drillCodeine.End = new Point3D(154d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(151.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(151.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-
-                DxfLineType drillCodeLineType3 = new DxfLineType("TestLine14" + str);
-                model.LineTypes.Add(drillCodeLineType3);
-                {
-                    DxfLine drillCodeine3 = new DxfLine();
-                    drillCodeine3.Start = new Point3D(159d, -23d, 0d);
-                    drillCodeine3.End = new Point3D(159d, -278d, 0d);
-                    drillCodeine3.Color = EntityColors.Gray;
-                    drillCodeine3.LineType = drillCodeLineType3;
-                    block.Entities.Add(drillCodeine3);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"5",
-                    new Point3D(158.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(159d, -16d, 0d);
-                    drillCodeine.End = new Point3D(159d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(156.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(156.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-
-                DxfLineType drillCodeLineType4 = new DxfLineType("TestLine15" + str);
-                model.LineTypes.Add(drillCodeLineType4);
-                {
-                    DxfLine drillCodeine4 = new DxfLine();
-                    drillCodeine4.Start = new Point3D(164d, -23d, 0d);
-                    drillCodeine4.End = new Point3D(164d, -278d, 0d);
-                    drillCodeine4.Color = EntityColors.Gray;
-                    drillCodeine4.LineType = drillCodeLineType4;
-                    block.Entities.Add(drillCodeine4);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"6",
-                    new Point3D(163.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(164d, -16d, 0d);
-                    drillCodeine.End = new Point3D(164d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(161.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(161.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-
-                DxfLineType drillCodeLineType5 = new DxfLineType("TestLine16" + str);
-                model.LineTypes.Add(drillCodeLineType5);
-                {
-                    DxfLine drillCodeine5 = new DxfLine();
-                    drillCodeine5.Start = new Point3D(169d, -23d, 0d);
-                    drillCodeine5.End = new Point3D(169d, -278d, 0);
-                    drillCodeine5.Color = EntityColors.Gray;
-                    drillCodeine5.LineType = drillCodeLineType5;
-                    block.Entities.Add(drillCodeine5);
-                }
-                {
-                    DxfMText mtext = new DxfMText(
-                    @"7",
-                    new Point3D(168.5d, -13.5d, 0d),
-                    2d
-                    );
-                    model.Entities.Add(mtext);
-                    //长短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(169d, -16d, 0d);
-                    drillCodeine.End = new Point3D(169d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-                {
-                    //短线
-                    DxfLine drillCodeine = new DxfLine();
-                    drillCodeine.Start = new Point3D(166.5d, -17d, 0d);
-                    drillCodeine.End = new Point3D(166.5d, -18d, 0d);
-                    drillCodeine.LineType = drillCodeLineType;
-                    block.Entities.Add(drillCodeine);
-                }
-            }
-
+            
             //需要填入表中的其他部分的内容
             {
                 //钻孔编号*****************************************************************
@@ -642,12 +435,12 @@ namespace BLL.module
                 //***********************************************************************
 
                 //钻孔位置***************************************************************
-                DxfMText drillLocation = new DxfMText(
+                DxfMText drillLocationText = new DxfMText(
                     @"钻孔位置",
                     new Point3D(35d, 5d, 0d),
                     2.5d
                     );
-                block.Entities.Add(drillLocation);
+                block.Entities.Add(drillLocationText);
                 DxfLineType drillLocationLineType = new DxfLineType("drillLocationLine" + str);
                 model.LineTypes.Add(drillLocationLineType);
                 DxfLine drillLocationLine = new DxfLine();
@@ -708,16 +501,7 @@ namespace BLL.module
                 //**********************************************************************************            
             }
             //addPattern();
-            addExtension();//设置值的同时画出扩展线           
-                           //string path = Server.MapPath(@"~/DrillTable/AcosticBoreholeTable.dxf");
-                           //using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, true))
-                           //{
-                           //file.WriteLine(model.UserName.ToString());
-                           // DxfWriter.Write("AcosticBoreholeTable.dxf", model,true);
-                           //}
-
-            AcosticWave aw = new AcosticWave();
-            aw.getAusticWave(model, block);
+            addExtension();//设置值的同时画出扩展线
 
             DxfWriter.Write(@"/DrillTable/AcosticBoreholeTable.dxf", model, true);
             //DxfWriter.Write("AcosticBoreholeTable.dxf", model);
@@ -726,6 +510,7 @@ namespace BLL.module
             ConvertFigureFormat cf = new ConvertFigureFormat();
             string stream = "C://DrillTable/AcosticBoreholeTable.dxf";
             cf.getDXFFormat(model, stream);
+
         }
 
         /// <summary> 
@@ -750,15 +535,16 @@ namespace BLL.module
             string mstr;
             double formerExtensionLineHeight = -23;//上一个花纹扩展线的位置
             double end = 0;
-            for(int i = 0; i < drillStrataList.Count; i++)
+            for (int i = 0; i <= drillStrataList.Count; i++)
             {
-                if ( drillStrataList[i].startDepth.ToString() == "" || drillStrataList[i].endDepth.ToString() == "")
+                if (i== drillStrataList.Count)//
                 {
                     end = -scaleConversionForLastPattern(end) - 23;//比例尺转换
                     //竖直分线  
                     string str = getRadomData(6);
                     DxfLineType line13Type = new DxfLineType("lastLine1" + str);
                     model.LineTypes.Add(line13Type);
+                    //两列花纹中间画水平连接线
                     DxfLine drillHoleStadHeightLine3 = new DxfLine();
                     drillHoleStadHeightLine3.Start = new Point3D(53, end, 0d);
                     drillHoleStadHeightLine3.End = new Point3D(55, end, 0d);
@@ -828,8 +614,8 @@ namespace BLL.module
                     //return mstr;
                 }
             }
-            
-           
+
+
         }
 
         /// <summary>

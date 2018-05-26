@@ -29,6 +29,7 @@ namespace SurveyHistogram
                         "~/Content/components/fastclick/lib/fastclick.js",                       
                         "~/Scripts/basejs/module.js",
                         "~/Scripts/basejs/module.form.validate.js",
+                        "~/Scripts/basejs/pdfShow.js",
                         "~/Scripts/site.js"));
 
             //绑定地图的js
@@ -62,6 +63,7 @@ namespace SurveyHistogram
                       "~/Content/site.css",
                       "~/Content/skins.css",
                       "~/Content/bootstrapValidator.css",
+                      "~/Content/bootstrap-responsive.css",
                       "~/Content/map.css",
                       "~/Content/basecss/module.css"));
 

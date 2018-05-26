@@ -20,7 +20,7 @@ namespace BLL.module
     //  author：fengxiaojuan
     //  时间：2018/5/17 19:39:20  
     //  文件名：ConvertFigureFormat 
-    //  for:转换图片类型的类
+    //  for:转换柱状图成图格式的类
     //==============================================================
     class ConvertFigureFormat
     {
@@ -94,6 +94,8 @@ namespace BLL.module
                 pdfGraphics.EndDocument();
             }
 
+            /*
+             * 可选的图片格式
             stream = File.Create(outfile + ".png");
             ImageExporter.EncodeImageToPng(bitmap, stream);
 
@@ -108,6 +110,7 @@ namespace BLL.module
 
             stream = File.Create(outfile + ".bmp");
             ImageExporter.EncodeImageToBmp(bitmap, stream);
+            */
 
         }
     }

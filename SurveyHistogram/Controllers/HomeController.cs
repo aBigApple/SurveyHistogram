@@ -14,6 +14,7 @@ using System.Runtime.Serialization.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Common;
+using BLL;
 
 namespace SurveyHistogram.Controllers
 {
@@ -133,11 +134,29 @@ namespace SurveyHistogram.Controllers
             //this.drillHistogram = info;
             //return null;
         }
+        
+         public void SetDrillType(DillHistogramType info)
+        {
+            CommonTest.histogramType = info.type;
+            //makeHistogram();
+            //this.drillHistogram = info;
+            //return null;
+        }
 
         public ActionResult makeHistogram()
         {
-            RockHistogram makedrill = new RockHistogram();
-            makedrill.setDrillHistogramData(CommonTest.driiiBasicInfo, CommonTest.drillStrataList, CommonTest.drillHistogram);
+            if(CommonTest.histogramType== "岩石钻孔")
+            {
+                RockHistogram makedrill = new RockHistogram();
+                 makedrill.setDrillHistogramData(CommonTest.driiiBasicInfo, CommonTest.drillStrataList, CommonTest.drillHistogram);
+            }
+            else
+            {
+                AcosticHistogram makedrill = new AcosticHistogram();
+                makedrill.setDrillHistogramData(CommonTest.driiiBasicInfo, CommonTest.drillStrataList, CommonTest.drillHistogram);
+
+            }
+
             return null;
         }
 
