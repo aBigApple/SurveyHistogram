@@ -69,7 +69,8 @@ namespace SurveyHistogram.Controllers
         //地层数据
         [HttpPost]    
         public ActionResult SetDrillStrataInfo()
-        {        
+        {
+            //将json字符串转化为DrillStrata类型的模型
             List<DrillStrata> stratas =new List<DrillStrata>();
             var sr = new StreamReader(Request.InputStream);
             string stream = sr.ReadToEnd() ;//获得json数据流
@@ -131,16 +132,11 @@ namespace SurveyHistogram.Controllers
         {
             CommonTest.drillHistogram = info;
             makeHistogram();
-            //this.drillHistogram = info;
-            //return null;
         }
         
          public void SetDrillType(DillHistogramType info)
         {
             CommonTest.histogramType = info.type;
-            //makeHistogram();
-            //this.drillHistogram = info;
-            //return null;
         }
 
         public ActionResult makeHistogram()

@@ -5,12 +5,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        岩石钻孔
-        <small>Rock drilling</small>
+        地质钻孔成图
+        <small>Drilling Histogram</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Rock drilling</li>
+        <li class="active">Drilling</li>
     </ol>
 </section>
 <!-- Content (Page content) -->
@@ -210,7 +210,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">开始深度</label>
                                         <div class="col-sm-4">
-                                            <input class="form-control" name="strataDepth"  type="text" placeholder="必填项" />
+                                            <input class="form-control" name="startDepth"  type="text" placeholder="必填项" />
                                         </div>
                                         <label class="col-sm-2 control-label">结束深度</label>
                                         <div class="col-sm-4">
@@ -394,16 +394,17 @@
                 <!-- 预览  -->
                 <div class="box box-default">
                     <div class="box-header with-border">
-                        <h3 class="box-title">预览</h3>
+                        @*<h3 class="box-title">预览</h3>*@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <embed style="width:100% ; height:800px;" src="~/Drill/Images/AcosticBoreholeTable.pdf">
+                        <embed id="dillHistogramPreview" style="width:100% ; height:800px;">
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <div class='step-button' style="margin-top: 50px;">
-
+                        <div class='step-button'>
+                            <button type='button' class='btn btn-default prevBtn' id='prevBtn'>上一步</button>
+                            <button type='button' class='btn btn-default nextBtn' id='nextBtn'>下一步</button>
                         </div>
                     </div>
                 </div>
@@ -580,10 +581,11 @@
     <!-- /.modal -->
 </div>
 <script type="text/javascript" src="~/Scripts/basejs/setStep.js"></script>
-
+@*中～微风化泥质灰岩：灰色、深灰色，薄～中厚层状，层间夹少量泥质条带，节理发育～不发育，方解石矿脉发育，顶部见溶蚀现象，岩体较破碎～较完整，岩芯呈柱状、短柱状。*@
 <script>
     var step = new SetStep({
-        content: '.stepCont'
+        content: '.stepCont',
+        clickAble: false 
     })
 </script>
 

@@ -28,7 +28,7 @@ namespace BLL.module
         {
 
         }
-        public void getDXFFormat(DxfModel model, string filename)
+        public void getDXFFormat(DxfModel model, string filename, string outfile)
         {
             try
             {
@@ -60,16 +60,16 @@ namespace BLL.module
                 );
             //string outfile = Path.GetFileNameWithoutExtension(Path.GetFullPath(filename));
             Stream stream = null;
-            string outfile = "C://DrillTable/AcosticBoreholeTable";
+            //string outfile = AppDomain.CurrentDomain.BaseDirectory + "Drill\\rockHistogram\\"+filename;
 
             BoundsCalculator boundsCalculator = new BoundsCalculator();
             boundsCalculator.GetBounds(model);
             Bounds3D bounds = boundsCalculator.Bounds;
-            PaperSize paperSize = PaperSizes.GetPaperSize(PaperKind.Letter);
+            PaperSize paperSize = PaperSizes.GetPaperSize(PaperKind.A4);//设置为A4纸的大小
             // Lengths in inches.
             float pageWidth = (float)paperSize.Width / 100f;
             float pageHeight = (float)paperSize.Height / 100f;
-            float margin = 0.5f;
+            float margin = 0.2f; //值越小 model相对于pdf图幅越大
             // Scale and transform such that its fits max width/height
             // and the top left middle of the cad drawing will match the 
             // top middle of the pdf page.

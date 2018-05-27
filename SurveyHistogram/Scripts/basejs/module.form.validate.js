@@ -296,7 +296,7 @@ $(".submitBasicInfo").click(function () {
         type: "POST",//为post请求
         url: "/Home/GetDrillBasicInfo",//这是我在后台接受数据的文件名
         data: $('#drillBasicForm').serialize(),//
-        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        async: false,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
         error: function (request) {//请求失败之后的操作
             return;
         },
@@ -317,7 +317,7 @@ $(".submitStrataAllInfo").click(function () {
         });
         args[i] = data;
     });
-    alert("data;" + JSON.stringify(args));
+    //alert("data;" + JSON.stringify(args));
     var paramStr = JSON.stringify(args);
 
     $.ajax({
@@ -326,7 +326,7 @@ $(".submitStrataAllInfo").click(function () {
         dataType: "json",
         url: "/Home/SetDrillStrataInfo",//这是我在后台接受数据的文件名
         data: paramStr,//
-        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        async: false,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
         error: function (request) {//请求失败之后的操作
             return;
         },
@@ -336,23 +336,6 @@ $(".submitStrataAllInfo").click(function () {
     });
     //return JSON.stringify(args);
 })
-$(".makeHistogram").click(function () {
-    $.ajax({
-        cache: true,//保留缓存数据
-        type: "POST",//为post请求
-        url: "/Home/SetDrillScale",//这是我在后台接受数据的文件名
-        data: $('#drillScaleForm').serialize(),//
-        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
-        error: function (request) {//请求失败之后的操作
-            return;
-        },
-        success: function (data) {//请求成功之后的操作
-            console.log("success");
-        }
-    });
-    return false;
-    
-})
 
 //确定柱状图类型
 $(".makeType").click(function () {
@@ -361,7 +344,7 @@ $(".makeType").click(function () {
         type: "POST",//为post请求
         url: "/Home/SetDrillType",//这是我在后台接受数据的文件名
         data: $('#drillTypeForm').serialize(),//
-        async: true,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
+        async: false,//设置成true，这标志着在请求开始后，其他代码依然能够执行。如果把这个选项设置成false，这意味着所有的请求都不再是异步的了，这也会导致浏览器被锁死
         error: function (request) {//请求失败之后的操作
             return;
         },
@@ -371,6 +354,35 @@ $(".makeType").click(function () {
     });
     return false;
 
+})
+
+//点击“成图按钮”进行钻孔柱状图成图
+$(".makeHistogram").click(function () {
+    $.ajax({
+        cache: true,//保留缓存数据
+        type: "POST",//为post请求
+        url: "/Home/SetDrillScale",//这是我在后台接受数据的文件名
+        data: $('#drillScaleForm').serialize(),//
+        async: false,//其他操作必须等该操作执行完毕之后才能执行
+        error: function (request) {//请求失败之后的操作
+            return;
+        },
+        success: function (data) {//请求成功之后的操作
+            //console.log("success");
+            //提交成功后读取刚刚生成的钻孔柱状图进行显示
+            var pdfName = $("select[name=drillCode]").val();
+            var type=$("select[name=type]").val();
+            var pdfPath;
+            if(type=="岩石钻孔"){
+                pdfPath = "rockHistogram/";
+            } else {
+                pdfPath = "acosticHistogram/";
+            }
+            $("#dillHistogramPreview").attr("src", "/Drill/" + pdfPath + pdfName + ".pdf");
+        }
+    });
+    return false;
+    
 })
 
 

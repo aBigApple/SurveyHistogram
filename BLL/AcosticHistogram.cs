@@ -693,25 +693,22 @@ namespace BLL
                 block.Entities.Add(drillHoleStadHeightWriteIn);
                 //**********************************************************************************            
             }
-            //addPattern();
-            addExtension();//设置值的同时画出扩展线           
-                           //string path = Server.MapPath(@"~/DrillTable/AcosticBoreholeTable.dxf");
-                           //using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, true))
-                           //{
-                           //file.WriteLine(model.UserName.ToString());
-                           // DxfWriter.Write("AcosticBoreholeTable.dxf", model,true);
-                           //}
+            
+            addExtension();//添加扩展线，包括描述信息的添加（）
 
             AcosticWave aw = new AcosticWave();//声波数据
             aw.getAusticWave(model, block);
 
-            DxfWriter.Write(@"/DrillTable/AcosticBoreholeTable.dxf", model, true);
-            //DxfWriter.Write("AcosticBoreholeTable.dxf", model);
-            //return "AcosticBoreholeTable.dxf";
-
+            //文件存储路径  
+            //dxf格式的柱状图
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Drill\\acosticHistogram\\" + drillCode + ".dxf";
+            DxfWriter.Write(path, model, true);
+            
+            //获取其他格式的柱状图
             ConvertFigureFormat cf = new ConvertFigureFormat();
-            string stream = "C://DrillTable/AcosticBoreholeTable.dxf";
-            cf.getDXFFormat(model, stream);
+            string filename = drillCode;
+            string outfile = AppDomain.CurrentDomain.BaseDirectory + "Drill\\acosticHistogram\\" + filename;
+            cf.getDXFFormat(model, filename, outfile);
 
         }
 

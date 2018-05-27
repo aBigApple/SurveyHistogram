@@ -15,7 +15,7 @@ namespace BLL.module
     //==============================================================
     //  author：fengxiaojuan
     //  时间：2018/5/2 9:40:05
-    //  文件名：pattern     
+    //  文件名：读取花纹库图片的类 
     //==============================================================
     public class Pattern
     {
@@ -23,8 +23,8 @@ namespace BLL.module
         //绑定加载图片
         public List<PatternModel> bindImg()
         {
-
-            string path = @"F:\drillHistogramFileStore\legend\patternLibriay";  //程序运行时先在F盘下配置，保证该文件存在
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Drill\\legend\\patternLibriay";
+           // string path = @"F:\drillHistogramFileStore\legend\patternLibriay";  //程序运行时先在F盘下配置，保证该文件存在
 
             List<PatternModel> imgList = new List<PatternModel>();
             //StringBuilder imgList = new StringBuilder();
@@ -43,7 +43,7 @@ namespace BLL.module
         //获取图片名称
         public string geImgtName(string numName)
         {
-            string path = @"F:\drillHistogramFileStore\legend\rockName\";//程序运行时先在F盘下配置，保证该文件存在
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Drill\\legend\\rockName\\";//程序运行时先在F盘下配置，保证该文件存在
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach (FileInfo file in fileInfo)  //遍历文件

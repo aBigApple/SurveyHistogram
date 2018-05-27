@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -131,11 +132,8 @@ namespace BLL.module
                 table1.Rows.ElementAt<DxfTableRow>(0).Height = 18d;
                 table1.Rows.ElementAt<DxfTableRow>(1).Height = 5d;
                 table1.Rows.ElementAt<DxfTableRow>(2).Height = 255;
-
-                /*foreach (DxfTableColumn column in table1.Columns)
-                {
-                    column.Width = 25d;
-                }*/
+                
+                //设置柱状图各列宽
                 table1.Columns.ElementAt<DxfTableColumn>(0).Width = 9;
                 table1.Columns.ElementAt<DxfTableColumn>(1).Width = 13;
                 table1.Columns.ElementAt<DxfTableColumn>(2).Width = 9;
@@ -189,7 +187,7 @@ namespace BLL.module
                     ); block.Entities.Add(drillHoleStadHeight);
 
                 drillHoleStadHeight = new DxfMText(
-                   @"岩芯" + '\n' + "采取率" + '\n' + "（%）",
+                   @" 岩芯" + '\n' + "采取率" + '\n' + "（%）",
                    new Point3D(106d, -2d, 0d),
                    2d
                    ); block.Entities.Add(drillHoleStadHeight);
@@ -271,13 +269,13 @@ namespace BLL.module
 
                 drillHoleStadHeight = new DxfMText(
                  @"9",
-                 new Point3D(149d, -19d, 0d),
+                 new Point3D(148d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
                 drillHoleStadHeight = new DxfMText(
                  @"10",
-                 new Point3D(166.5d, -19d, 0d),
+                 new Point3D(165d, -19d, 0d),
                  2d
                  ); block.Entities.Add(drillHoleStadHeight);
 
@@ -503,13 +501,25 @@ namespace BLL.module
             //addPattern();
             addExtension();//设置值的同时画出扩展线
 
-            DxfWriter.Write(@"/DrillTable/AcosticBoreholeTable.dxf", model, true);
+            //文件存储路径以及文件名，因为钻孔编号是唯一的，所以钻孔柱状图根据钻孔编号命名，一个钻孔对应一个柱状图
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Drill\\rockHistogram\\" + drillCode + ".dxf";
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            //先判断当前文件若存在则删除
+            /*
+            if (directoryInfo.Exists) //若当前文件存在则先删除，再重新创建生成，这样可以在界面中进行多次成图
+            {
+                directoryInfo.Delete();
+            }
+            */
+
+            DxfWriter.Write(path, model, true);
             //DxfWriter.Write("AcosticBoreholeTable.dxf", model);
             //return "AcosticBoreholeTable.dxf";
 
             ConvertFigureFormat cf = new ConvertFigureFormat();
-            string stream = "C://DrillTable/AcosticBoreholeTable.dxf";
-            cf.getDXFFormat(model, stream);
+            string filename = drillCode;
+            string outfile = AppDomain.CurrentDomain.BaseDirectory + "Drill\\rockHistogram\\" + filename;
+            cf.getDXFFormat(model, filename, outfile);
 
         }
 

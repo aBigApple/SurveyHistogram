@@ -34,7 +34,7 @@ namespace BLL.module
         }
         /// <summary>
         /// 根据写入字体的总高度，计算延长线位置的方法
-        /// 传入的是已经进过比例尺换算的高度
+        /// 传入的是已经进行过比例尺换算的高度
         /// </summary>
         public double calculateHeight(string graphicTranslation)
         {
@@ -185,12 +185,14 @@ namespace BLL.module
                  }
             );
             model.Entities.Add(leader);
+
             //为直线时候,远大于的时候，可以将描述文字放在花纹的中间
             double middleHeight = formerExtensionLineHeight - extensionLineHeight;//上下上下两条扩展线之间的距离
 
-            if (((textHeight * 2 + 3) <= middleHeight) && textHeight != 0)
+            if (((textHeight * 2 + 3) <= middleHeight))
             {
-                double lastLine = -endHeight - 23 + middleHeight / 2 + textHeight / 2 + 2;
+                double lastLine = extensionLineHeight + 1 + middleHeight / 2;
+                // double lastLine = -endHeight - 23 + middleHeight / 2 + textHeight / 2;
                 //地层描述
                 graphicTranslation = "    " + graphicTranslation;
                 graphicTranslation = BreakLongString(graphicTranslation, 28);
@@ -208,7 +210,7 @@ namespace BLL.module
                 graphicTranslation = BreakLongString(graphicTranslation, 28);
                 DxfMText graphicTranslationText = new DxfMText(
                         @"" + graphicTranslation,     // - textHeight + textHeight 
-                        new Point3D(67d, extensionLineHeight + textHeight + 2, 0d),
+                        new Point3D(67d, extensionLineHeight + textHeight + 1, 0d),
                         1.5d
                         );
                 model.Entities.Add(graphicTranslationText);
@@ -349,7 +351,7 @@ namespace BLL.module
             model.Entities.Add(leader);
             double forNext = extensionLineHeight;
             return forNext;//返回上一条扩展线的最低位置
-            //DxfWriter.Write("Leader Example.dxf", model, false);
+
         }
 
         /// <summary>

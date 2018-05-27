@@ -1,126 +1,128 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")    
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-   
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-    <header class="main-header" style="position:fixed">
-        <div class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini">@Html.ActionLink("钻孔", "Index", "Home", new { area = "" }, new { @class = "navbar-nav-font" })</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg">@Html.ActionLink("钻孔柱状图成图系统", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
-        </div>
-        <div class="navbar navbar-static-top navbar-fixed-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-            <div class="navbar-custom-menu">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="caret"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav  navbar-right">                        
-                        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("地图", "map", "Map")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
+    <div class="wrapper">
+        <header class="main-header" style="position:fixed">
+            <div class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">@Html.ActionLink("钻孔", "Index", "Home", new { area = "" }, new { @class = "navbar-nav-font" })</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">@Html.ActionLink("钻孔柱状图成图系统", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
             </div>
-        </div>
-
-    </header>
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="~/Content/img/Mina.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Janty</p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="钻孔搜索">
-                    <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                            <i class="fa fa-search"></i>
+            <div class="navbar navbar-static-top navbar-fixed-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="caret"></span>
                         </button>
-                    </span>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav  navbar-right">
+                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("地图", "map", "Map")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
                 </div>
-            </form>
-            <!-- /.search form -->
-            <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">菜 单</li>
-                <li class="active treeview">@Html.ActionLink("钻孔柱状图成图系统", "Index", "Home")
-                    <i class="fa fa-dashboard"></i> <span>钻孔成图</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    <ul id="dir-ul" class="fix_ul treeview-menu">
-                        <li class="active" data-value="1"><a href="#"><i class="fa fa-circle-o"></i> 岩石钻孔 </a></li>
-                        <li data-value="2"><a href="#"><i class="fa fa-circle-o"></i> 声波钻孔</a></li>
-                    </ul>
-                </li>                
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span> 钻孔资料展示 </span>
-                        <span class="pull-right-container">
-                            <span class="label label-primary pull-right">4</span>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><i class="fa fa-circle-o"></i> 成图地图统计分析</li>
-                        <li><i class="fa fa-circle-o"></i> 成图时间对比</li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>地图</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><i class="fa fa-circle-o"></i> 钻孔显示</li>
-                        <li><i class="fa fa-circle-o"></i> 缓冲区分析</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <!-- /.sidebar -->
-    </aside>
+            </div>
 
-    <div class="content-wrapper">
-        @RenderBody()
-        
-    </div>   
-</div>
-<footer class="main-footer">
-   <div class="pull-right hidden-xs">
-       <b>Version</b> 1.1.0
-   </div>
-    <p>&copy; @DateTime.Now.Year - 钻孔柱状图生成系统</p>
-</footer>
+        </header>
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/Content/img/Mina.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Janty</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="钻孔搜索">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">菜 单</li>
+                    <li class="active treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>钻孔成图</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul id="dir-ul" class="fix_ul treeview-menu">
+                            <li data-value="1"><a href="#"><i class="fa fa-circle-o"></i> 岩石钻孔 </a></li>
+                            <li data-value="2"><a href="#"><i class="fa fa-circle-o"></i> 声波钻孔</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-files-o"></i>
+                            <span> 钻孔资料展示 </span>
+                            <span class="pull-right-container">
+                                <span class="label label-primary pull-right">4</span>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 成图地图统计分析</a></li>
+                            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 成图时间对比</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>地图</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> 钻孔显示</a></li>
+                            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 缓冲区分析</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <div class="content-wrapper">
+            @RenderBody()
+
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 1.1.0
+        </div>
+        <p>&copy; @DateTime.Now.Year - 钻孔柱状图生成系统</p>
+    </footer>
     <script>
     $.widget.bridge('uibutton', $.ui.button);
     </script>
